@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const footerLinks = {
   Menu: [
@@ -77,6 +78,9 @@ const socialLinks = [
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/qr-menu")) return null;
 
   return (
     <footer className="bg-[#FFFFFF] border-t border-gray-100 relative overflow-hidden">

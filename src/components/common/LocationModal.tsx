@@ -2,6 +2,7 @@
 
 import { type ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { MapPin, Navigation, Check, Loader2, LocateFixed } from "lucide-react";
 import BannerModal from "./BannerModal";
 
@@ -18,11 +19,14 @@ export default function LocationModal() {
   const [locStatus, setLocStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [locationName, setLocationName] = useState<string>("");
   const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const pathname = usePathname();
+  const isQrMenu = pathname?.startsWith("/qr-menu");
 
   useEffect(() => {
+    if (isQrMenu) return;
     const openTimer = setTimeout(() => setIsOpen(true), 500);
     return () => clearTimeout(openTimer);
-  }, []);
+  }, [isQrMenu]);
 
   const handleFetchLocation = () => {
     if (!("geolocation" in navigator)) {
@@ -72,6 +76,8 @@ export default function LocationModal() {
     setIsOpen(false);
     setShowBanner(true);
   };
+
+  if (isQrMenu) return null;
 
   if (!isOpen) return (
     <>{showBanner && <BannerModal onClose={() => setShowBanner(false)} />}</>
