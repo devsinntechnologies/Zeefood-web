@@ -5,6 +5,7 @@ import { useSelfOrder } from "@/context/SelfOrderContext";
 import { useProducts, useProductFilters } from "@/hooks/useProducts";
 import type { Product } from "@/lib/store";
 import {
+  categoryOrderRank,
   cleanProductName,
   getCategoryName,
   getUniqueVariants,
@@ -66,7 +67,7 @@ function RealQRMenuExperience({ businessId }: { businessId: string }) {
         image: productImageUrl(product.image, product.name, categoryName),
       });
     }
-    return Array.from(byCategory.values());
+    return Array.from(byCategory.values()).sort((a, b) => categoryOrderRank(a.name) - categoryOrderRank(b.name));
   }, [filteredProducts]);
 
   const handleConfirmOrder = useCallback(async () => {

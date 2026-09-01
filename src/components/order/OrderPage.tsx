@@ -124,6 +124,29 @@ const CATEGORY_DISPLAY_MAP: Record<string, string> = {
   دیسی: "دیسی",
 };
 
+// Fixed display order for the standard restaurant category set (English/Urdu
+// name both accepted, since either can be stored depending on how the
+// business owner entered it). Categories not in this list sort after it, in
+// their natural (first-seen) order.
+const CATEGORY_ORDER_RANK: Record<string, number> = {
+  Desi: 0,
+  دیسی: 0,
+  Mashrobat: 1,
+  مشروبات: 1,
+  "Azafi Ashia": 2,
+  "اضافی اشیاء": 2,
+  Chat: 3,
+  چاٹ: 3,
+  Frozen: 4,
+  فروزن: 4,
+  Achar: 5,
+  اچار: 5,
+};
+
+export function categoryOrderRank(categoryName: string): number {
+  return CATEGORY_ORDER_RANK[categoryName] ?? Number.MAX_SAFE_INTEGER;
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Modals
 // ─────────────────────────────────────────────────────────────────────────────
