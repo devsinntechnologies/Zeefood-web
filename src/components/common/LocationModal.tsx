@@ -20,14 +20,13 @@ export default function LocationModal() {
   const [locStatus, setLocStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [locationName, setLocationName] = useState<string>("");
   const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
-  const pathname = usePathname();
-  const isQrMenu = pathname?.startsWith("/qr-menu");
+  const isSelfOrderRoute = pathname?.startsWith("/self");
 
   useEffect(() => {
-    if (pathname?.startsWith("/self/")) return;
+    if (isSelfOrderRoute) return;
     const openTimer = setTimeout(() => setIsOpen(true), 500);
     return () => clearTimeout(openTimer);
-  }, [pathname]);
+  }, [pathname, isSelfOrderRoute]);
 
   const handleFetchLocation = () => {
     if (!("geolocation" in navigator)) {
@@ -78,7 +77,7 @@ export default function LocationModal() {
     setShowBanner(true);
   };
 
-  if (isQrMenu) return null;
+  if (isSelfOrderRoute) return null;
 
   if (!isOpen) return (
     <>{showBanner && <BannerModal onClose={() => setShowBanner(false)} />}</>

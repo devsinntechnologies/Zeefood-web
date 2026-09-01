@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useParams } from "next/navigation";
 import { SearchX } from "lucide-react";
 import { getMockSession } from "@/data/mock-qr-sessions";
 import { getMockMenu } from "@/data/mock-menu";
@@ -191,9 +190,7 @@ function InvalidQRState() {
   );
 }
 
-export default function QRMenuPage() {
-  const params = useParams<{ token: string }>();
-  const token = params?.token;
+export default function QRMenuRoute({ token }: { token: string }) {
   const session = token ? getMockSession(token) : null;
 
   if (!session) {
