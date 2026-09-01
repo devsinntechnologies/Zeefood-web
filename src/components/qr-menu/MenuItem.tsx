@@ -19,14 +19,14 @@ export default function MenuItem({
       <button
         type="button"
         onClick={() => onOpen(item)}
-        className="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl border border-brand-primary/10 bg-[#fbf7f2]"
+        className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-brand-primary/10 bg-[#fbf7f2]"
       >
         <Image
           src={item.image}
           alt={item.name}
           fill
           className="object-cover"
-          sizes="56px"
+          sizes="64px"
           unoptimized
         />
       </button>
@@ -35,7 +35,7 @@ export default function MenuItem({
         <h3 className="truncate text-[13px] font-black uppercase leading-tight text-brand-dark">
           {item.name}
         </h3>
-        <p className="mt-0.5 line-clamp-1 text-[11px] font-medium leading-snug text-brand-dark/55">
+        <p className="mt-0.5 line-clamp-2 text-[11px] font-medium leading-snug text-brand-dark/55">
           {item.description}
         </p>
         <p className="mt-1 text-[13px] font-black text-brand-primary">Rs. {item.price}</p>
