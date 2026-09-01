@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import OrderPage from "@/components/order/OrderPage";
+import RealMenuRoute from "@/components/qr-menu/RealMenuRoute";
 import { useSelfOrder } from "@/context/SelfOrderContext";
 import { BUSINESS_ID } from "@/lib/api";
 
@@ -75,5 +75,5 @@ export default function SelfOrderPage({ tableId }: { tableId: string }) {
     );
   }
 
-  return <OrderPage />;
+  return <RealMenuRoute />;
 }

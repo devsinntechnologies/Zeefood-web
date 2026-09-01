@@ -25,16 +25,16 @@ type ProductWithOptionalDetails = Product & {
 };
 
 // Helpers
-const isUrduText = (text: string) => /[\u0600-\u06FF]/.test(text || "");
+export const isUrduText = (text: string) => /[\u0600-\u06FF]/.test(text || "");
 
-const getCategoryName = (category: any): string => {
+export const getCategoryName = (category: any): string => {
   if (!category) return "";
   if (typeof category === "string") return category;
   return category.CategoryName || category.name || "";
 };
 
 // Aggressively cleans up messy backend names, bottle sizes, stray numbers, and variant keywords
-const cleanProductName = (text?: string | null, categoryName?: string | null) => {
+export const cleanProductName = (text?: string | null, categoryName?: string | null) => {
   if (!text) return "";
   let cleaned = String(text).replace(/[()]/g, " ");
 
@@ -51,7 +51,7 @@ const cleanProductName = (text?: string | null, categoryName?: string | null) =>
 };
 
 // Deduplicate variants safely with null safety
-const getUniqueVariants = (variants?: ProductVariant[] | null): ProductVariant[] => {
+export const getUniqueVariants = (variants?: ProductVariant[] | null): ProductVariant[] => {
   if (!variants || !Array.isArray(variants)) return [];
   const seen = new Set<string>();
   return variants.filter((v) => {
@@ -88,7 +88,7 @@ function getDishFallbackImage(name?: string | null, categoryName?: string | null
   return "/desi_compressed.webp";
 }
 
-function productImageUrl(image?: string | null, productName?: string | null, categoryName?: string | null): string {
+export function productImageUrl(image?: string | null, productName?: string | null, categoryName?: string | null): string {
   if (!image || typeof image !== 'string' || image.trim() === "") {
     return getDishFallbackImage(productName, categoryName);
   }
@@ -705,7 +705,7 @@ function SkeletonCard() {
 // ─────────────────────────────────────────────────────────────────────────────
 // CartItem adapter
 // ─────────────────────────────────────────────────────────────────────────────
-function toCartItem(product: Product, variant?: ProductVariant) {
+export function toCartItem(product: Product, variant?: ProductVariant) {
   const categoryName = getCategoryName(product.category);
   const safeVariants = getUniqueVariants(product.variants);
   const price =

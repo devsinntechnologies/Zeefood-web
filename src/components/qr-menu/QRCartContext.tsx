@@ -17,7 +17,10 @@ interface QRCartContextType {
   cartTotal: number;
 }
 
-const QRCartContext = createContext<QRCartContextType | undefined>(undefined);
+// Exported so a differently-backed provider (e.g. RealQRCartProvider) can
+// supply the same value shape to the exact same consumers.
+export const QRCartContext = createContext<QRCartContextType | undefined>(undefined);
+export type { QRCartContextType };
 
 export function QRCartProvider({ children }: { children: ReactNode }) {
   const [lines, setLines] = useState<QRCartLine[]>([]);
