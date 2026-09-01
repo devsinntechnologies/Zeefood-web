@@ -116,10 +116,10 @@ export default function QRMenuLayout({
 
   return (
     <div className="flex h-[100dvh] flex-col bg-[#fbf7f2]">
-      <div ref={stickyRef} className="sticky top-0 z-30 shrink-0">
+      <div ref={stickyRef} className="sticky top-0 z-30 shrink-0 bg-[#fbf7f2]/95 backdrop-blur-sm">
         <QRMenuHeader tableNumber={tableNumber} onOpenOrder={onOpenReview} />
         {banner}
-        <div className="border-b border-brand-primary/10 bg-[#fbf7f2]/95 backdrop-blur-sm">
+        <div className="border-b border-brand-primary/10">
           <MenuSearch value={query} onChange={setQuery} />
           <CategoryTabs
             categories={categories}
@@ -131,7 +131,7 @@ export default function QRMenuLayout({
       </div>
 
       <main ref={mainRef} className="min-h-0 flex-1 overflow-y-auto px-4 pb-28 sm:px-5">
-        <div className="mx-auto w-full max-w-[440px]">
+        <div className="mx-auto w-full max-w-[440px] sm:max-w-xl lg:max-w-2xl">
           {filteredCategories.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-20 text-center">
               <div className="flex h-14 w-14 items-center justify-center rounded-full border border-brand-primary/15 bg-white shadow-sm">

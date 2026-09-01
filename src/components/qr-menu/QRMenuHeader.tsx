@@ -14,7 +14,7 @@ export default function QRMenuHeader({
   const { cartCount } = useQRCart();
 
   return (
-    <header className="relative z-10 shrink-0 border-b border-brand-primary/10 bg-white/95 backdrop-blur-sm">
+    <header className="relative z-10 shrink-0 border-b border-brand-primary/10">
       <div className="flex items-center justify-between gap-3 px-4 py-2.5 sm:px-5">
         <div className="flex min-w-0 items-center gap-2">
           <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full ring-1 ring-brand-primary/15">

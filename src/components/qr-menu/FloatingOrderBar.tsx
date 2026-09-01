@@ -18,7 +18,7 @@ export default function FloatingOrderBar({ onView }: { onView: () => void }) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 48, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-            className="pointer-events-auto flex w-full max-w-[440px] items-center justify-between rounded-2xl bg-brand-primary px-5 py-3.5 text-white shadow-[0_16px_36px_rgba(248,114,5,0.4)] transition-transform active:scale-[0.98]"
+            className="pointer-events-auto flex w-full max-w-[440px] items-center justify-between rounded-2xl bg-brand-primary px-5 py-3.5 text-white shadow-[0_16px_36px_rgba(248,114,5,0.4)] transition-transform active:scale-[0.98] sm:max-w-xl lg:max-w-2xl"
           >
             <div className="text-left">
               <p className="text-[9px] font-black uppercase tracking-[0.25em] text-white/75">
