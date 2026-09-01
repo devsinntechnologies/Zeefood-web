@@ -42,7 +42,7 @@ export default function Navbar() {
   const totalItems = cartItems.reduce((total: number, entry: any) => total + (entry?.quantity || 0), 0);
   const deliveryCharges = isSelfOrder ? 0 : 150;
   const total = cartTotal + (cartTotal > 0 ? deliveryCharges : 0);
-  const isQrMenu = pathname?.startsWith("/qr-menu");
+  const isQrMenu = pathname?.startsWith("/self");
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);

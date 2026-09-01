@@ -80,7 +80,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
   const pathname = usePathname();
 
-  if (pathname?.startsWith("/qr-menu")) return null;
+  if (pathname?.startsWith("/self")) return null;
 
   return (
     <footer className="bg-[#FFFFFF] border-t border-gray-100 relative overflow-hidden">
