@@ -50,10 +50,7 @@ export default function QRMenuLayout({
   const [stickyHeight, setStickyHeight] = useState(0);
 
   const isSearching = query.trim().length > 0;
-
-  useEffect(() => {
-    if (!activeCategoryId && categories[0]?.id) setActiveCategoryId(categories[0].id);
-  }, [activeCategoryId, categories]);
+  const effectiveActiveCategoryId = activeCategoryId || categories[0]?.id || "";
 
   const filteredCategories = useMemo(() => {
     if (!isSearching) return categories;
@@ -126,7 +123,7 @@ export default function QRMenuLayout({
           <MenuSearch value={query} onChange={setQuery} />
           <CategoryTabs
             categories={categories}
-            activeId={activeCategoryId}
+            activeId={effectiveActiveCategoryId}
             disabled={isSearching}
             onSelect={handleSelectCategory}
           />
