@@ -41,7 +41,7 @@ export function useProducts(params?: Partial<ProductsQueryParams>) {
     // Cancel the in-flight request on unmount
     return () => { promise.abort(); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, params?.search, params?.category, params?.page]);
+  }, [dispatch, params?.businessId, params?.search, params?.category, params?.page]);
 
   const refetch = useCallback(
     (overrides?: Partial<ProductsQueryParams>) => {

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ShoppingCart, X, Trash2, Plus, Minus, ArrowRight } from "lucide-react"; 
 import { useCart } from "@/context/CartContext";
+import { useSelfOrder } from "@/context/SelfOrderContext";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -26,9 +27,20 @@ export default function Navbar() {
   const removeFromCart = cartContext?.removeFromCart || ((id: string, variantId?: string) => updateQuantity(id, -999, variantId));
   const clearCart = cartContext?.clearCart || (() => {});
   const cartTotal = cartContext?.cartTotal || 0;
+  const {
+    isSelfOrder,
+    table,
+    customerName,
+    setCustomerName,
+    notes,
+    setNotes,
+    submitting,
+    submitOrder,
+    successMessage,
+  } = useSelfOrder();
 
   const totalItems = cartItems.reduce((total: number, entry: any) => total + (entry?.quantity || 0), 0);
-  const deliveryCharges = 150;
+  const deliveryCharges = isSelfOrder ? 0 : 150;
   const total = cartTotal + (cartTotal > 0 ? deliveryCharges : 0);
   const isQrMenu = pathname?.startsWith("/qr-menu");
 
@@ -104,7 +116,11 @@ export default function Navbar() {
     setIsCartOpen(false);
   };
 
-  if (isQrMenu) return null;
+  const handleTableCheckout = async () => {
+    if (cartItems.length === 0 || submitting) return;
+    const ok = await submitOrder();
+    if (ok) setIsCartOpen(false);
+  };
 
   return (
     <>
@@ -337,15 +353,36 @@ export default function Navbar() {
 
           {cartItems.length > 0 && (
             <div className="border-t border-brand-primary/10 bg-white p-6 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
+              {isSelfOrder ? (
+                <div className="mb-4 space-y-3">
+                  <p className="text-xs font-black uppercase tracking-widest text-brand-primary">
+                    Table {table?.tableNumber}
+                  </p>
+                  <input
+                    value={customerName}
+                    onChange={(e) => setCustomerName(e.target.value)}
+                    placeholder="Your name (optional)"
+                    className="w-full rounded-2xl border border-brand-primary/15 bg-brand-surface px-4 py-3 text-sm font-semibold outline-none"
+                  />
+                  <input
+                    value={notes}
+                    onChange={(e) => setNotes(e.target.value)}
+                    placeholder="Special instructions (optional)"
+                    className="w-full rounded-2xl border border-brand-primary/15 bg-brand-surface px-4 py-3 text-sm font-semibold outline-none"
+                  />
+                </div>
+              ) : null}
               <div className="mb-4 flex flex-col gap-2 text-sm text-brand-dark/80">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
                   <span className="font-semibold text-brand-dark">Rs. {cartTotal.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Delivery Fee</span>
-                  <span className="font-semibold text-brand-dark">Rs. {deliveryCharges}</span>
-                </div>
+                {!isSelfOrder ? (
+                  <div className="flex justify-between">
+                    <span>Delivery Fee</span>
+                    <span className="font-semibold text-brand-dark">Rs. {deliveryCharges}</span>
+                  </div>
+                ) : null}
               </div>
               <div className="mb-6 flex items-end justify-between border-t border-brand-primary/10 pt-4">
                 <span className="text-base font-bold text-brand-dark">Total</span>
@@ -353,12 +390,20 @@ export default function Navbar() {
               </div>
               
               <button
-                onClick={handleWhatsAppCheckout}
-                className="group flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-6 text-base font-bold text-white shadow-[0_10px_22px_rgba(248,114,5,0.22)] transition-all duration-300 hover:bg-brand-primary/90 hover:shadow-[0_14px_28px_rgba(248,114,5,0.28)]"
+                onClick={isSelfOrder ? handleTableCheckout : handleWhatsAppCheckout}
+                disabled={submitting}
+                className="group flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-6 text-base font-bold text-white shadow-[0_10px_22px_rgba(248,114,5,0.22)] transition-all duration-300 hover:bg-brand-primary/90 hover:shadow-[0_14px_28px_rgba(248,114,5,0.28)] disabled:opacity-60"
               >
-                Place Order on WhatsApp
+                {isSelfOrder
+                  ? submitting
+                    ? "Sending to waiter..."
+                    : "Send Order to Waiter"
+                  : "Place Order on WhatsApp"}
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </button>
+              {isSelfOrder && successMessage ? (
+                <p className="mt-3 text-center text-xs font-bold text-emerald-700">{successMessage}</p>
+              ) : null}
             </div>
           )}
         </div>
@@ -411,8 +456,8 @@ export default function Navbar() {
             
             <div className="mt-8 flex flex-col items-center gap-3">
               <span className="text-[9px] font-black uppercase tracking-[0.4em] text-gray-400">Powered By</span>
-              <a href="https://www.devsinntechnologies.com/" target="_blank" rel="noopener noreferrer" className="relative h-8 w-32 transition-transform hover:scale-105">
-                <Image src="/devsinnlogo0.svg" alt="Dev's Inn Technologies" fill className="object-contain" unoptimized />
+              <a href="https://diginizam.com" target="_blank" rel="noopener noreferrer" className="relative h-8 w-40 transition-transform hover:scale-105">
+                <Image src="/diginizam-logo.svg" alt="DigiNizam" fill className="object-contain" unoptimized />
               </a>
             </div>
           </div>

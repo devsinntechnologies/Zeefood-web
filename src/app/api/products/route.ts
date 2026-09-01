@@ -1,6 +1,6 @@
-const BASE_URL = "https://drm.devsinntechnologies.com";
+import { API_BASE_URL, BUSINESS_ID } from "@/lib/api";
+
 const PRODUCTS_PATH = "/public/products";
-const BUSINESS_ID = "5707b450-9723-4794-9ba4-ee03890cf504";
 
 export async function GET(request: Request) {
   const incomingUrl = new URL(request.url);
@@ -8,9 +8,10 @@ export async function GET(request: Request) {
   const limit = incomingUrl.searchParams.get("limit") ?? "100";
   const category = incomingUrl.searchParams.get("category");
   const search = incomingUrl.searchParams.get("search");
+  const businessId = incomingUrl.searchParams.get("businessId") || BUSINESS_ID;
 
-  const upstreamUrl = new URL(`${BASE_URL}${PRODUCTS_PATH}`);
-  upstreamUrl.searchParams.set("businessId", BUSINESS_ID);
+  const upstreamUrl = new URL(`${API_BASE_URL}${PRODUCTS_PATH}`);
+  upstreamUrl.searchParams.set("businessId", businessId);
   upstreamUrl.searchParams.set("page", page);
   upstreamUrl.searchParams.set("limit", limit);
 

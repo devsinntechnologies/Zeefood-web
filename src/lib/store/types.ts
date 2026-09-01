@@ -77,4 +77,5 @@ export interface ProductsState {
   activeCategory: string;
   searchQuery: string;
   lastFetched: number | null;          // epoch ms — for cache invalidation
+  lastFetchedBusinessId: string | null;
 }

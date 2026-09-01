@@ -28,6 +28,7 @@ const initialState: ProductsState = {
   activeCategory: "All",
   searchQuery: "",
   lastFetched: null,
+  lastFetchedBusinessId: null,
 };
 
 // ─── Async Thunk: fetchProducts ───────────────────────────────────────────────
@@ -39,11 +40,13 @@ export const fetchProducts = createAsyncThunk<
   "products/fetchAll",
   async (params, { getState, signal, rejectWithValue }) => {
     // ── Cache guard: skip refetch if data is fresh ──
-    const { lastFetched, status } = getState().products;
+    const { lastFetched, lastFetchedBusinessId, status } = getState().products;
+    const businessId = params?.businessId || BUSINESS_ID;
     const now = Date.now();
     if (
       status === "succeeded" &&
       lastFetched &&
+      lastFetchedBusinessId === businessId &&
       now - lastFetched < CACHE_TTL_MS &&
       !params?.search &&
       !params?.category
@@ -62,7 +65,7 @@ export const fetchProducts = createAsyncThunk<
 
     try {
       const response = await fetchProductsApi(
-        { businessId: BUSINESS_ID, ...params },
+        { ...params, businessId },
         signal
       );
 
@@ -112,6 +115,7 @@ const productsSlice = createSlice({
     },
     invalidateCache(state) {
       state.lastFetched = null;
+      state.lastFetchedBusinessId = null;
       state.status = "idle";
     },
   },
@@ -132,6 +136,7 @@ const productsSlice = createSlice({
           totalPages: action.payload.totalPages,
         };
         state.lastFetched = Date.now();
+        state.lastFetchedBusinessId = action.meta.arg?.businessId || BUSINESS_ID;
         state.error = null;
       })
       .addCase(fetchProducts.rejected, (state, action) => {

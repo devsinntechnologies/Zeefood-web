@@ -1,15 +1,19 @@
 // ─── Products API Service ─────────────────────────────────────────────────────
 // Centralised API calls with proper error handling and request cancellation.
 
+import { API_BASE_URL, BUSINESS_ID } from "@/lib/api";
 import type { ProductsApiResponse, ProductsQueryParams } from "./types";
 
-const BASE_URL = "https://drm.devsinntechnologies.com";
+export { BUSINESS_ID };
+
 const PRODUCTS_PATH = "/public/products";
-export const BUSINESS_ID = "5707b450-9723-4794-9ba4-ee03890cf504";
 
 function productsUrl(params: Record<string, string | number | undefined>): string {
-  const qs = buildQueryString({ businessId: BUSINESS_ID, ...params });
-  return `${BASE_URL}${PRODUCTS_PATH}?${qs}`;
+  const qs = buildQueryString({
+    businessId: params.businessId || BUSINESS_ID,
+    ...params,
+  });
+  return `${API_BASE_URL}${PRODUCTS_PATH}?${qs}`;
 }
 
 /**
@@ -37,6 +41,7 @@ export async function fetchProductsApi(
   signal?: AbortSignal
 ): Promise<ProductsApiResponse> {
   const qs = buildQueryString({
+    businessId: params.businessId || BUSINESS_ID,
     search: params.search,
     category: params.category,
     page: params.page ?? 1,
@@ -46,6 +51,7 @@ export async function fetchProductsApi(
   const url =
     typeof window === "undefined"
       ? productsUrl({
+          businessId: params.businessId || BUSINESS_ID,
           search: params.search,
           category: params.category,
           page: params.page ?? 1,

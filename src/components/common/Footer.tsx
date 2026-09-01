@@ -263,19 +263,19 @@ export default function Footer() {
             {/* Right: Powered By + Links */}
             <div className="flex flex-col items-center sm:items-end gap-5">
               <a
-                href="https://www.devsinntechnologies.com/"
+                href="https://diginizam.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center gap-3 transition-all duration-300 hover:opacity-80 active:scale-95"
               >
-                <span className="text-[13px] font-medium text-gray-400 uppercase tracking-widest group-hover:text-[#2563eb] transition-colors duration-300">
+                <span className="text-[13px] font-medium text-gray-400 uppercase tracking-widest group-hover:text-[#0149EC] transition-colors duration-300">
                   POWERED BY
                 </span>
-                <div className="h-6 w-[2px] bg-gray-200 group-hover:bg-[#2563eb]/30 transition-colors duration-300"></div>
-                <div className="relative h-10 w-32 sm:w-40">
+                <div className="h-6 w-[2px] bg-gray-200 group-hover:bg-[#0149EC]/30 transition-colors duration-300"></div>
+                <div className="relative h-10 w-40 sm:w-52">
                   <Image
-                    src="/devsinnlogo0.svg"
-                    alt="Devsinn Technologies"
+                    src="/diginizam-logo.svg"
+                    alt="DigiNizam"
                     fill
                     className="object-contain"
                     unoptimized

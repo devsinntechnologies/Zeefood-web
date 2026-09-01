@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
 import { VariantProductCard } from "@/components/order/OrderPage";
+import { API_BASE_URL } from "@/lib/api";
 import type { Product, ProductVariant } from "@/lib/store";
 
 type RemoteProduct = {
@@ -18,14 +19,12 @@ type RemoteProduct = {
   variants?: ProductVariant[];
 };
 
-const DRM_BASE = "https://drm.devsinntechnologies.com";
-
 function normalizeImage(image?: string | null) {
   const imgStr = (image || "").trim();
   if (imgStr) {
     if (imgStr.startsWith("http://") || imgStr.startsWith("https://")) return imgStr;
     if (imgStr.startsWith("/uploads/") || imgStr.startsWith("uploads/")) {
-      return `${DRM_BASE}/${imgStr.replace(/^\//, "")}`;
+      return `${API_BASE_URL}/${imgStr.replace(/^\//, "")}`;
     }
     return imgStr.startsWith("/") ? imgStr : `/${imgStr}`;
   }

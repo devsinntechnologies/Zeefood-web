@@ -5,10 +5,12 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
+import { useSelfOrder } from "@/context/SelfOrderContext";
 import { createPortal } from "react-dom";
 
 // ── Redux / Custom hooks ──────────────────────────────────────────────────────
 import { useProducts, useProductFilters } from "@/hooks/useProducts";
+import { API_BASE_URL } from "@/lib/api";
 import type { Product, ProductVariant } from "@/lib/store";
 
 type ProductCardDetails = {
@@ -64,8 +66,6 @@ const getUniqueVariants = (variants?: ProductVariant[] | null): ProductVariant[]
 // ─────────────────────────────────────────────────────────────────────────────
 // Image helper
 // ─────────────────────────────────────────────────────────────────────────────
-const DRM_BASE = "https://drm.devsinntechnologies.com";
-
 function getDishFallbackImage(name?: string | null, categoryName?: string | null): string {
   const n = String(name || "").toLowerCase();
   const c = String(categoryName || "").toLowerCase();
@@ -94,11 +94,11 @@ function productImageUrl(image?: string | null, productName?: string | null, cat
   }
   if (image.startsWith("http://") || image.startsWith("https://")) return image;
   if (image.startsWith("/uploads/") || image.startsWith("uploads/")) {
-    return `${DRM_BASE}/${image.replace(/^\//, "")}`;
+    return `${API_BASE_URL}/${image.replace(/^\//, "")}`;
   }
   if (image.startsWith("/")) return image;
   if (image.startsWith("images/")) return `/${image}`;
-  return `${DRM_BASE}/${image}`;
+  return `${API_BASE_URL}/${image}`;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -239,22 +239,15 @@ function ProductQuickAddModal({
 
   const modalContent = (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-3 sm:p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[9999] flex items-end justify-center bg-black/70 p-0 backdrop-blur-sm sm:items-center sm:p-4"
       onClick={onClose}
     >
-      {/* 1080×630 two-panel card */}
       <div
-        className="relative flex w-full overflow-hidden rounded-[24px] shadow-2xl"
-        style={{ maxWidth: "860px", height: "min(520px, 92vh)", aspectRatio: "12/7" }}
+        className="relative flex h-[min(92dvh,760px)] w-full max-w-[860px] flex-col overflow-hidden rounded-t-[24px] bg-white shadow-2xl sm:h-[min(520px,92vh)] sm:flex-row sm:rounded-[24px]"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* ── LEFT HALF: product image on dark-orange background ── */}
-        <div
-          className="relative shrink-0 overflow-hidden"
-          style={{ width: "50%", background: "#3d1400" }}
-        >
-          {/* Dark orange vignette overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#6b2800]/60 via-[#3d1400]/30 to-[#1a0800]/80 z-10" />
+        <div className="relative h-44 w-full shrink-0 overflow-hidden bg-[#3d1400] sm:h-auto sm:w-1/2">
+          <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#6b2800]/60 via-[#3d1400]/30 to-[#1a0800]/80" />
           <Image
             src={productImageUrl(product.image, product.name, categoryName)}
             alt={cleanName}
@@ -262,16 +255,14 @@ function ProductQuickAddModal({
             className="object-cover opacity-90"
             unoptimized
           />
-          {/* Subtle brand stamp */}
-          <div className="absolute bottom-5 left-5 z-20">
-            <span className="inline-block rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1 text-[9px] font-black uppercase tracking-[0.25em] text-white/70">
+          <div className="absolute bottom-4 left-4 z-20 sm:bottom-5 sm:left-5">
+            <span className="inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[9px] font-black uppercase tracking-[0.25em] text-white/70 backdrop-blur-sm">
               Zee Food Gallery
             </span>
           </div>
         </div>
 
-        {/* ── RIGHT HALF: controls ── */}
-        <div className="relative flex flex-col bg-white overflow-y-auto no-scrollbar" style={{ width: "50%" }}>
+        <div className="relative flex min-h-0 w-full flex-1 flex-col overflow-y-auto bg-white no-scrollbar sm:w-1/2">
           {/* Close button */}
           <button
             type="button"
@@ -390,36 +381,33 @@ function ProductQuickAddModal({
               />
             </div>
 
-            {/* 6. Quantity + Add to Cart */}
-            <div className="mt-auto flex items-center gap-3">
-              {/* Quantity – 1 + */}
-              <div className="flex h-[44px] items-center justify-between gap-1 rounded-full border border-brand-primary/25 bg-[#fbf7f2] px-2 shadow-sm">
+            <div className="mt-auto flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
+              <div className="flex h-11 w-full shrink-0 items-center justify-between gap-1 rounded-full border border-brand-primary/25 bg-[#fbf7f2] px-2 shadow-sm sm:w-auto">
                 <button
                   type="button"
                   onClick={handleLocalDecrease}
                   disabled={variants.length > 0 && !localSelectedVariant}
-                  className="flex h-8 w-8 items-center justify-center rounded-full text-brand-dark hover:text-brand-primary text-xl font-medium disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  className="flex h-8 w-8 items-center justify-center rounded-full text-xl font-medium text-brand-dark transition-colors hover:text-brand-primary disabled:cursor-not-allowed disabled:opacity-30"
                 >
                   −
                 </button>
-                <span className="min-w-[1.75rem] flex items-center justify-center text-center text-sm font-black text-brand-dark tabular-nums leading-none">
+                <span className="flex min-w-[1.75rem] items-center justify-center text-center text-sm font-black tabular-nums leading-none text-brand-dark">
                   {variants.length > 0 ? (currentSelectedVariantQty > 0 ? currentSelectedVariantQty : 1) : baseQuantity}
                 </span>
                 <button
                   type="button"
                   onClick={handleLocalIncrease}
                   disabled={variants.length > 0 && !localSelectedVariant}
-                  className="flex h-8 w-8 items-center justify-center rounded-full text-brand-dark hover:text-brand-primary text-xl font-medium disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  className="flex h-8 w-8 items-center justify-center rounded-full text-xl font-medium text-brand-dark transition-colors hover:text-brand-primary disabled:cursor-not-allowed disabled:opacity-30"
                 >
                   +
                 </button>
               </div>
 
-              {/* Add to Cart */}
               <button
                 type="button"
                 onClick={handleConfirm}
-                className="flex-1 h-[44px] flex items-center justify-center gap-2 rounded-full bg-brand-primary text-[11px] font-black uppercase tracking-[0.18em] text-white shadow-[0_8px_20px_rgba(248,114,5,0.3)] transition-all hover:bg-[#e96500] hover:shadow-[0_12px_28px_rgba(248,114,5,0.35)] hover:-translate-y-0.5"
+                className="flex h-11 w-full min-w-0 items-center justify-center whitespace-nowrap rounded-full bg-brand-primary px-4 text-[11px] font-black uppercase tracking-[0.12em] text-white shadow-[0_8px_20px_rgba(248,114,5,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[#e96500] sm:flex-1"
               >
                 Add to Cart
               </button>
@@ -756,8 +744,11 @@ export default function OrderPage() {
   const { t, language } = useLanguage();
   const { cart, addToCart } = useCart();
   const searchParams = useSearchParams();
+  const { isSelfOrder, table, successMessage, errorMessage } = useSelfOrder();
 
-  const { isLoading, isError, error, refetch } = useProducts();
+  const { isLoading, isError, error, refetch } = useProducts(
+    isSelfOrder && table?.businessId ? { businessId: table.businessId } : undefined,
+  );
   const {
     filteredProducts,
     categories,
@@ -810,11 +801,23 @@ export default function OrderPage() {
         <div className="flex-1 bg-[#fbf7f2]">
           <div className="mb-5 rounded-[20px] border border-brand-primary/10 bg-white/35 p-4 sm:p-6 shadow-[0_8px_24px_rgba(17,24,39,0.03)] backdrop-blur-sm sm:mb-6">
             <h1 className={`mb-1 text-2xl sm:text-3xl font-black tracking-tight text-[#111827] lg:text-4xl ${language === "UR" ? "text-right font-ama-dhaba" : ""}`}>
-              {t("orderDelivery")}
+              {isSelfOrder ? `Table ${table?.tableNumber}` : t("orderDelivery")}
             </h1>
             <p className={`mb-5 text-xs sm:text-sm font-semibold text-[#111827]/70 lg:text-base ${language === "UR" ? "text-right" : ""}`}>
-              {t("exclusiveChefMeals")}
+              {isSelfOrder
+                ? "Browse the menu and send your order to the waiter. It is confirmed after approval."
+                : t("exclusiveChefMeals")}
             </p>
+            {isSelfOrder && successMessage ? (
+              <p className="mb-4 rounded-2xl bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-800">
+                {successMessage}
+              </p>
+            ) : null}
+            {isSelfOrder && errorMessage ? (
+              <p className="mb-4 rounded-2xl bg-red-50 px-4 py-3 text-sm font-bold text-red-700">
+                {errorMessage}
+              </p>
+            ) : null}
 
             <div className="mb-6 flex justify-center w-full">
               <div className="relative w-full max-w-xl">

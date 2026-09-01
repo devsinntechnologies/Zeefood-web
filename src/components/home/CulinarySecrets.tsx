@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { VariantProductCard } from "@/components/order/OrderPage";
+import { API_BASE_URL } from "@/lib/api";
 import type { Product, ProductVariant } from "@/lib/store";
 
 type RemoteProduct = {
@@ -25,8 +26,6 @@ type RemoteProduct = {
   variants?: ProductVariant[];
 };
 
-const DRM_BASE = "https://drm.devsinntechnologies.com";
-
 const craftNotes = [
   "Masala is bloomed slowly for depth.",
   "Fresh batches keep rice, herbs, and sauces bright.",
@@ -42,7 +41,7 @@ function normalizeImage(image?: string | null) {
   if (imgStr) {
     if (imgStr.startsWith("http://") || imgStr.startsWith("https://")) return imgStr;
     if (imgStr.startsWith("/uploads/") || imgStr.startsWith("uploads/")) {
-      return `${DRM_BASE}/${imgStr.replace(/^\//, "")}`;
+      return `${API_BASE_URL}/${imgStr.replace(/^\//, "")}`;
     }
     return imgStr.startsWith("/") ? imgStr : `/${imgStr}`;
   }

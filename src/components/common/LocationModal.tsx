@@ -11,6 +11,7 @@ type OrderType = "delivery" | "pickup";
 const PICKUP_ADDRESS = "464-Sirhindi Road, Near Gourmet Bakers, First Round About, Samanabad, Lahore";
 
 export default function LocationModal() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
   const [orderType, setOrderType] = useState<OrderType>("delivery");
@@ -23,10 +24,10 @@ export default function LocationModal() {
   const isQrMenu = pathname?.startsWith("/qr-menu");
 
   useEffect(() => {
-    if (isQrMenu) return;
+    if (pathname?.startsWith("/self/")) return;
     const openTimer = setTimeout(() => setIsOpen(true), 500);
     return () => clearTimeout(openTimer);
-  }, [isQrMenu]);
+  }, [pathname]);
 
   const handleFetchLocation = () => {
     if (!("geolocation" in navigator)) {
@@ -220,9 +221,9 @@ export default function LocationModal() {
 
           <footer className="mt-5 flex items-center justify-center gap-2 rounded-full border border-brand-primary/15 bg-white/90 px-4 py-2 shadow-[0_10px_24px_rgba(17,24,39,0.06)]">
             <span className="text-[10px] font-black uppercase tracking-[0.22em] text-brand-dark/45">Powered by</span>
-            <span className="relative h-5 w-20">
-              <Image src="/devsinnlogo0.svg" alt="Devsinn Technologies" fill className="object-contain" />
-            </span>
+            <a href="https://diginizam.com" target="_blank" rel="noopener noreferrer" className="relative h-5 w-28">
+              <Image src="/diginizam-logo.svg" alt="DigiNizam" fill className="object-contain" />
+            </a>
           </footer>
         </div>
       </div>

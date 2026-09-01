@@ -35,6 +35,7 @@ import Footer from "@/components/common/Footer";
 import LocationModal from "@/components/common/LocationModal";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { CartProvider } from "@/context/CartContext";
+import { SelfOrderProvider } from "@/context/SelfOrderContext";
 import ReduxProvider from "@/components/common/ReduxProvider";
 import PageTransition from "@/components/common/PageTransition";
 
@@ -56,12 +57,14 @@ export default function RootLayout({
         <ReduxProvider>
           <LanguageProvider>
             <CartProvider>
-              <LocationModal />
-              <Navbar />
-              <main className="flex-grow overflow-x-hidden">
-                <PageTransition>{children}</PageTransition>
-              </main>
-              <Footer />
+              <SelfOrderProvider>
+                <LocationModal />
+                <Navbar />
+                <main className="flex-grow overflow-x-hidden">
+                  <PageTransition>{children}</PageTransition>
+                </main>
+                <Footer />
+              </SelfOrderProvider>
             </CartProvider>
           </LanguageProvider>
         </ReduxProvider>
