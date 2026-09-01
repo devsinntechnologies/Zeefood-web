@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import OrderPage from "@/components/order/OrderPage";
 import { useSelfOrder } from "@/context/SelfOrderContext";
 import { BUSINESS_ID } from "@/lib/api";
@@ -19,7 +20,9 @@ type TablePayload = {
   };
 };
 
-export default function SelfOrderPage({ tableId }: { tableId: string }) {
+export default function SelfOrderPage() {
+  const params = useParams<{ tableId: string }>();
+  const tableId = String(params.tableId || "");
   const { registerTable } = useSelfOrder();
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
