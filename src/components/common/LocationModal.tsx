@@ -20,8 +20,8 @@ export default function LocationModal() {
   const [locStatus, setLocStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [locationName, setLocationName] = useState<string>("");
   const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
-  const pathname = usePathname();
-  const isQrMenu = pathname?.startsWith("/qr-menu");
+
+  const isQrMenu = pathname?.startsWith("/self");
 
   useEffect(() => {
     if (pathname?.startsWith("/self/")) return;
