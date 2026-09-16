@@ -57,7 +57,7 @@ export default function BannerModal({ onClose }: { onClose: () => void }) {
           className="absolute top-3 right-3 z-10 grid place-items-center h-8 w-8 rounded-full bg-white shadow-lg border border-gray-200 transition-colors hover:bg-gray-100"
         >
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L11 11M11 1L1 11" stroke="#111827" strokeWidth="2" strokeLinecap="round"/>
+            <path d="M1 1L11 11M11 1L1 11" stroke="#111111" strokeWidth="2" strokeLinecap="round"/>
           </svg>
         </button>
       </div>

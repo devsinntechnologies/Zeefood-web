@@ -9,7 +9,7 @@ import MockOrderSuccess from "@/components/qr-menu/MockOrderSuccess";
 
 function InvalidQRState() {
   return (
-    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-[#fbf7f2] px-6 text-center">
+    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-[#F2F3F3] px-6 text-center">
       <div className="flex h-16 w-16 items-center justify-center rounded-full border border-brand-primary/15 bg-white shadow-sm">
         <svg className="h-7 w-7 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M12 3a9 9 0 100 18A9 9 0 0012 3z" />

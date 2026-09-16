@@ -19,7 +19,7 @@ export default function FAQPage() {
           { q: "Can I modify my order?", a: "Orders can be modified within the first 3 minutes of placement. After that, preparation begins to ensure fast delivery." },
           { q: "Do you cater for events?", a: "Absolutely! We offer premium catering for weddings, corporate events, and large gatherings. Contact us for a quote." }
         ].map((item, i) => (
-          <div key={i} className="p-5 sm:p-7 bg-white border border-brand-primary/10 rounded-2xl shadow-sm hover:shadow-[0_18px_42px_rgba(248,114,5,0.10)] transition-all group">
+          <div key={i} className="p-5 sm:p-7 bg-white border border-brand-primary/10 rounded-2xl shadow-sm hover:shadow-[0_18px_42px_rgba(231, 28, 7,0.10)] transition-all group">
             <h3 className="text-xl sm:text-2xl font-black text-brand-dark mb-4 group-hover:text-brand-primary transition-colors flex items-start gap-4 leading-tight">
               <span className="text-brand-primary/35 text-4xl sm:text-5xl font-serif italic -mt-2 shrink-0">Q.</span>
               {item.q}
@@ -31,7 +31,7 @@ export default function FAQPage() {
         ))}
       </div>
 
-      <div className="mt-8 p-5 sm:p-7 bg-[#fffdf8] rounded-2xl text-center text-brand-dark relative overflow-hidden shadow-[0_24px_70px_rgba(248,114,5,0.10)] border border-brand-primary/15">
+      <div className="mt-8 p-5 sm:p-7 bg-[#FFFFFF] rounded-2xl text-center text-brand-dark relative overflow-hidden shadow-[0_24px_70px_rgba(231, 28, 7,0.10)] border border-brand-primary/15">
         <div className="absolute inset-x-0 top-0 h-1 bg-brand-primary" />
         <h3 className="text-3xl font-black mb-4 relative z-10">Still need help?</h3>
         <p className="text-brand-dark/70 mb-6 relative z-10 max-w-lg mx-auto text-lg font-medium">

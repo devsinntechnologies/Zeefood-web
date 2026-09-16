@@ -125,14 +125,14 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed left-0 right-0 top-0 z-[100] w-full h-20 transition-all duration-300 ${
+       className={`fixed left-0 right-0 top-0 z-[100] h-24 w-full transition-all duration-300 sm:h-28 ${
           isScrolled
-            ? "border-b border-brand-primary/10 bg-white/90 shadow-md backdrop-blur-md"
+            ? "border-b border-brand-primary/10 bg-white/95 shadow-md backdrop-blur-md"
             : "border-b border-brand-primary/10 bg-white"
         }`}
       >
         {isScrolled && (
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(248,114,5,0.08),transparent_42%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(231, 28, 7,0.08),transparent_42%)]" />
         )}
         
         <div className="site-container relative flex h-full items-center justify-between">
@@ -152,7 +152,7 @@ export default function Navbar() {
             <div className="relative inline-flex">
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="inline-flex min-h-8 sm:min-h-11 items-center justify-center gap-1.5 sm:gap-2.5 rounded-full bg-brand-primary px-3 py-1.5 sm:px-6 sm:py-2.5 text-[10px] sm:text-sm font-black uppercase tracking-wider sm:tracking-[0.2em] text-white shadow-[0_8px_16px_rgba(248,114,5,0.24)] sm:shadow-[0_12px_28px_rgba(248,114,5,0.24)] transition-all duration-300 hover:bg-brand-primary/95"
+                className="inline-flex min-h-8 sm:min-h-11 items-center justify-center gap-1.5 sm:gap-2.5 rounded-full bg-brand-primary px-3 py-1.5 sm:px-6 sm:py-2.5 text-[10px] sm:text-sm font-black uppercase tracking-wider sm:tracking-[0.2em] text-white shadow-[0_8px_16px_rgba(231, 28, 7,0.24)] sm:shadow-[0_12px_28px_rgba(231, 28, 7,0.24)] transition-all duration-300 hover:bg-brand-primary/95"
               >
                 <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span className="hidden min-[380px]:inline ml-1">Cart</span>
@@ -392,7 +392,7 @@ export default function Navbar() {
               <button
                 onClick={isSelfOrder ? handleTableCheckout : handleWhatsAppCheckout}
                 disabled={submitting}
-                className="group flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-6 text-base font-bold text-white shadow-[0_10px_22px_rgba(248,114,5,0.22)] transition-all duration-300 hover:bg-brand-primary/90 hover:shadow-[0_14px_28px_rgba(248,114,5,0.28)] disabled:opacity-60"
+                className="group flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-6 text-base font-bold text-white shadow-[0_10px_22px_rgba(231, 28, 7,0.22)] transition-all duration-300 hover:bg-brand-primary/90 hover:shadow-[0_14px_28px_rgba(231, 28, 7,0.28)] disabled:opacity-60"
               >
                 {isSelfOrder
                   ? submitting
@@ -413,7 +413,7 @@ export default function Navbar() {
       <div className={`fixed inset-0 z-[110] transition-all duration-300 lg:hidden ${isMobileMenuOpen ? "visible opacity-100" : "invisible opacity-0"}`}>
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
         <div
-          className={`absolute bottom-0 left-0 top-0 flex w-[min(88vw,24rem)] flex-col rounded-r-[30px] bg-gradient-to-br from-white via-orange-50/70 to-brand-surface p-5 shadow-[18px_0_50px_rgba(18,18,18,0.12)] transition-transform duration-500 min-[380px]:p-6 sm:p-8 ${
+          className={`absolute bottom-0 left-0 top-0 flex w-[min(88vw,24rem)] flex-col rounded-r-[30px] bg-gradient-to-br from-white via-white to-brand-surface p-5 shadow-[18px_0_50px_rgba(18,18,18,0.12)] transition-transform duration-500 min-[380px]:p-6 sm:p-8 ${
             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -448,7 +448,7 @@ export default function Navbar() {
                 setIsMobileMenuOpen(false);
                 setIsCartOpen(true);
               }}
-              className="flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-7 text-center text-sm font-bold text-white shadow-[0_10px_22px_rgba(248,114,5,0.22)] transition-all duration-300 hover:bg-brand-primary/90 hover:shadow-[0_14px_28px_rgba(248,114,5,0.28)]"
+              className="flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-7 text-center text-sm font-bold text-white shadow-[0_10px_22px_rgba(231, 28, 7,0.22)] transition-all duration-300 hover:bg-brand-primary/90 hover:shadow-[0_14px_28px_rgba(231, 28, 7,0.28)]"
             >
               <ShoppingCart className="h-5 w-5" />
               <span>Open Cart {totalItems > 0 && `(${totalItems})`}</span>
@@ -483,17 +483,16 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
 
 function BrandMark({ mobile = false }: { mobile?: boolean }) {
   return (
-    <Link href="/" className="flex items-center gap-3 transition-opacity duration-300 hover:opacity-90 my-auto">
-      <div className="relative h-12 w-12 shrink-0 min-[380px]:h-14 min-[380px]:w-14 sm:h-[72px] sm:w-[72px]">
-        <Image src="/fiery-wok.png" alt="Ama G Ka Dhaba" fill className="object-contain object-center" priority={!mobile} unoptimized />
-      </div>
-      <div className="flex flex-col items-center justify-center min-w-0 text-center">
-        <span className="block text-[10px] font-black uppercase tracking-[0.18em] text-brand-primary min-[380px]:text-[12px] min-[380px]:tracking-[0.22em] sm:text-[14px] sm:tracking-[0.28em] leading-tight">
-          Zee Food Gallery
-        </span>
-        <span lang="ur" dir="rtl" className="font-ama-dhaba -mt-1 sm:-mt-1.5 block whitespace-nowrap text-[18px] font-black leading-none text-brand-primary min-[380px]:text-[20px] sm:text-[28px]">
-          آما جی کا ڈھابہ
-        </span>
+    <Link href="/" className="my-auto flex items-center transition-opacity duration-300 hover:opacity-90" aria-label="ZeeFood Gallery home">
+      <div className="relative h-28 w-52 shrink-0 sm:h-32 sm:w-60">
+        <Image
+          src="/logo2.png"
+          alt="ZeeFood Gallery"
+          fill
+          className="object-contain object-left drop-shadow-[0_6px_16px_rgba(17,17,17,0.1)]"
+          priority={!mobile}
+          unoptimized
+        />
       </div>
     </Link>
   );

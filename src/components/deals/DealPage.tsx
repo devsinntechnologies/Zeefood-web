@@ -63,7 +63,7 @@ export default function DealPage({ products }: { products: Product[] }) {
     }, [products]);
 
     return (
-        <main className="min-h-screen bg-[#FFFFFF] pb-14 pt-24 text-brand-dark sm:pt-28">
+        <main className="min-h-screen bg-[#FFFFFF] pb-14 pt-28 text-brand-dark sm:pt-32">
             <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-7 flex flex-col gap-4 sm:mb-8 lg:flex-row lg:items-end lg:justify-between">
                     <div className="max-w-2xl">
@@ -86,7 +86,7 @@ export default function DealPage({ products }: { products: Product[] }) {
                         return (
                             <article
                                 key={deal.id}
-                                className="group flex min-w-0 flex-col !overflow-hidden rounded-[30px] border border-gray-200 bg-white shadow-[0_18px_55px_rgba(18,18,18,0.08)] transition-[box-shadow,transform] duration-300 [@media(hover:hover)]:hover:-translate-y-1 [@media(hover:hover)]:hover:shadow-[0_24px_70px_rgba(248,114,5,0.16)]"
+                                className="group flex min-w-0 flex-col !overflow-hidden rounded-[30px] border border-gray-200 bg-white shadow-[0_18px_55px_rgba(18,18,18,0.08)] transition-[box-shadow,transform] duration-300 [@media(hover:hover)]:hover:-translate-y-1 [@media(hover:hover)]:hover:shadow-[0_24px_70px_rgba(231, 28, 7,0.16)]"
                             >
                                 <div className="product-card-image !relative flex !w-full shrink-0 items-center justify-center !overflow-hidden !rounded-t-2xl !bg-white">
                                     <Image
@@ -144,8 +144,8 @@ export default function DealPage({ products }: { products: Product[] }) {
                                         disabled={!isAvailable}
                                         className={`relative z-10 mt-6 w-full touch-manipulation rounded-[18px] px-4 py-3 text-sm font-semibold text-white transition-[background-color,box-shadow,transform] duration-300 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-45 ${
                                             activeDealId === deal.id
-                                                ? "!bg-[#f87205] !shadow-[0_10px_25px_rgba(248,114,5,0.40)]"
-                                                : "!bg-white !text-brand-primary !border !border-brand-primary/20 !shadow-[0_10px_25px_rgba(248,114,5,0.10)]"
+                                                ? "!bg-[#E71C07] !shadow-[0_10px_25px_rgba(231, 28, 7,0.40)]"
+                                                : "!bg-white !text-brand-primary !border !border-brand-primary/20 !shadow-[0_10px_25px_rgba(231, 28, 7,0.10)]"
                                         }`}
                                     >
                                         {isAvailable ? "Add to Cart" : "Unavailable"}

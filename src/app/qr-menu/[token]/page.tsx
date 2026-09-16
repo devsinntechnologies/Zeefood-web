@@ -105,10 +105,10 @@ function QRMenuExperience({ tableNumber }: { tableNumber: string }) {
   };
 
   return (
-    <div className="flex h-[100dvh] flex-col bg-[#fbf7f2]">
+    <div className="flex h-[100dvh] flex-col bg-[#F2F3F3]">
       <div ref={stickyRef} className="sticky top-0 z-30 shrink-0">
         <QRMenuHeader tableNumber={tableNumber} onOpenOrder={() => setIsReviewOpen(true)} />
-        <div className="border-b border-brand-primary/10 bg-[#fbf7f2]/95 backdrop-blur-sm">
+        <div className="border-b border-brand-primary/10 bg-[#F2F3F3]/95 backdrop-blur-sm">
           <MenuSearch value={query} onChange={setQuery} />
           <CategoryTabs
             categories={categories}
@@ -175,7 +175,7 @@ function QRMenuExperience({ tableNumber }: { tableNumber: string }) {
 
 function InvalidQRState() {
   return (
-    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-[#fbf7f2] px-6 text-center">
+    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-[#F2F3F3] px-6 text-center">
       <div className="flex h-16 w-16 items-center justify-center rounded-full border border-brand-primary/15 bg-white shadow-sm">
         <svg className="h-7 w-7 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M12 3a9 9 0 100 18A9 9 0 0012 3z" />

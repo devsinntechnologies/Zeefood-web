@@ -21,8 +21,8 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fbf7f2] relative overflow-hidden flex items-start justify-center px-4 pb-10 pt-24 sm:items-center sm:pb-12 sm:pt-28 lg:pt-[7.5rem]">
-      <div className="absolute inset-x-0 top-0 h-[420px] bg-gradient-to-b from-orange-50/80 via-[#fbf7f2] to-[#fbf7f2] pointer-events-none" />
+    <div className="min-h-screen bg-[#F2F3F3] relative overflow-hidden flex items-start justify-center px-4 pb-10 pt-28 sm:items-center sm:pb-12 sm:pt-32">
+      <div className="absolute inset-x-0 top-0 h-[420px] bg-gradient-to-b from-red-50/60 via-[#F2F3F3] to-[#F2F3F3] pointer-events-none" />
 
 
       {/* Main Content */}
@@ -31,10 +31,10 @@ export default function ContactPage() {
           
           {/* Left Side: Contact Info */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-[#fffdf8]/90 border border-brand-primary/15 text-brand-primary px-4 py-1.5 rounded-2xl text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2 bg-[#FFFFFF]/90 border border-brand-primary/15 text-brand-primary px-4 py-1.5 rounded-2xl text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F87205] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F87205]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E71C07] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E71C07]"></span>
               </span>
               Get in Touch
             </div>
@@ -82,7 +82,7 @@ export default function ContactPage() {
             {/* Background glowing orb for form */}
             <div className="absolute inset-0 rounded-[28px] bg-brand-primary/10 blur-2xl" />
             
-            <div className="relative bg-[#fffdf8]/92 backdrop-blur-xl border border-brand-primary/10 p-5 sm:p-8 lg:p-10 rounded-2xl shadow-[0_24px_70px_rgba(17,24,39,0.06)]">
+            <div className="relative bg-[#FFFFFF]/92 backdrop-blur-xl border border-brand-primary/10 p-5 sm:p-8 lg:p-10 rounded-2xl shadow-[0_24px_70px_rgba(17,24,39,0.06)]">
               {!state.isSubmitted ? (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                   {/* Name Input */}
@@ -129,7 +129,7 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="relative bg-brand-primary w-full py-4 mt-2 rounded-2xl font-bold text-white text-lg tracking-wide overflow-hidden group transition-all duration-300 hover:bg-brand-primary/90 shadow-[0_14px_30px_rgba(248,114,5,0.24)]"
+                    className="relative bg-brand-primary w-full py-4 mt-2 rounded-2xl font-bold text-white text-lg tracking-wide overflow-hidden group transition-all duration-300 hover:bg-brand-primary/90 shadow-[0_14px_30px_rgba(231, 28, 7,0.24)]"
                   >
                     <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-primary translate-x-[-200%] group-hover:translate-x-[200%] duration-700 ease-in-out" />
                     <span className="relative flex items-center justify-center gap-2">
@@ -149,7 +149,7 @@ export default function ContactPage() {
                   <p className="text-brand-dark/75 font-medium max-w-sm mb-8">
                     Thanks for reaching out, {state.name}. Our premium support team will get back to you within 24 hours.
                   </p>
-                  <button onClick={() => setState({ name: "", email: "", message: "", isSubmitted: false })} className="text-[#F87205] font-bold hover:underline underline-offset-4">
+                  <button onClick={() => setState({ name: "", email: "", message: "", isSubmitted: false })} className="text-[#E71C07] font-bold hover:underline underline-offset-4">
                     Send another message
                   </button>
                 </div>

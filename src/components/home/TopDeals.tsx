@@ -55,7 +55,7 @@ export default function TopDeals() {
   }, []);
 
   return (
-    <section className="relative z-10 w-full overflow-hidden bg-[#fbf7f2] pb-5 pt-3 sm:pb-6 sm:pt-4 lg:pb-8 lg:pt-4">
+    <section className="relative z-10 w-full overflow-hidden bg-[#F2F3F3] pb-5 pt-3 sm:pb-6 sm:pt-4 lg:pb-8 lg:pt-4">
       <div className="site-container relative z-20">
         <div className="mb-2 flex flex-col items-center text-center sm:mb-3 lg:mb-4">
           <h2 className="text-[clamp(1.7rem,8vw,2.5rem)] font-black uppercase leading-[0.95] tracking-tighter text-brand-primary lg:text-4xl">

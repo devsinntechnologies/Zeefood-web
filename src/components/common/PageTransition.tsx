@@ -24,7 +24,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
         >
           <motion.div
             aria-hidden="true"
-            className="pointer-events-none fixed inset-0 z-[90] bg-gradient-to-r from-[#f97316]/90 via-transparent to-[#7d8f34]/80"
+            className="pointer-events-none fixed inset-0 z-[90] bg-gradient-to-r from-[#E71C07]/90 via-transparent to-[#FB5C02]/80"
             initial={{ x: "-100%", opacity: 0 }}
             animate={{ x: "-100%", opacity: 0 }}
             exit={{ x: ["-100%", "10%", "120%"], opacity: [0, 0.56, 0] }}
@@ -32,7 +32,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
           />
           <motion.div
             aria-hidden="true"
-            className="pointer-events-none fixed inset-x-0 top-0 z-[100] h-1 bg-brand-primary shadow-[0_0_40px_rgba(248,114,5,0.35)]"
+            className="pointer-events-none fixed inset-x-0 top-0 z-[100] h-1 bg-brand-primary shadow-[0_0_40px_rgba(231, 28, 7,0.35)]"
             initial={{ x: "-120%", opacity: 0 }}
             animate={{ x: "-120%", opacity: 0 }}
             exit={{ x: ["-120%", "20%", "120%"], opacity: [0, 0.9, 0] }}

@@ -49,9 +49,9 @@ export default function DealsPage() {
   // return <OriginalDealsPage />;
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(248,114,5,0.12),_transparent_48%)] pt-24 text-brand-dark sm:pt-28">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(231, 28, 7,0.12),_transparent_48%)] pt-28 text-brand-dark sm:pt-32">
       <section className="px-4 py-5 sm:px-6 sm:py-7 lg:px-8 lg:py-8">
-        <div className="mx-auto max-w-6xl rounded-[28px] border border-brand-primary/12 bg-[#fffdf8]/95 p-4 shadow-[0_25px_75px_rgba(15,23,42,0.07)] backdrop-blur-sm sm:p-6 lg:p-7">
+        <div className="mx-auto max-w-6xl rounded-[28px] border border-brand-primary/12 bg-[#FFFFFF]/95 p-4 shadow-[0_25px_75px_rgba(15,23,42,0.07)] backdrop-blur-sm sm:p-6 lg:p-7">
           <div className="grid items-center gap-5 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="rounded-[24px] border border-brand-primary/10 bg-white/80 p-5 shadow-[0_16px_40px_rgba(17,24,39,0.04)] sm:p-6">
               <div className="border-l-4 border-brand-primary/25 pl-5">
@@ -71,7 +71,7 @@ export default function DealsPage() {
                 <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href="/menu"
-                    className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-brand-primary px-8 text-sm font-black uppercase tracking-widest text-white no-underline shadow-[0_12px_28px_rgba(248,114,5,0.20)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-primary/90"
+                    className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-brand-primary px-8 text-sm font-black uppercase tracking-widest text-white no-underline shadow-[0_12px_28px_rgba(231, 28, 7,0.20)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-primary/90"
                   >
                     View Menu
                   </Link>

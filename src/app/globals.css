@@ -9,13 +9,19 @@
 }
 
 @theme {
-  --color-brand-primary: #F87205;
-  --color-brand-secondary: #111827;
-  --color-brand-accent: #F87205;
-  --color-brand-dark: #111827;
-  --color-brand-surface: #F8FAFC;
+  --color-brand-primary: #E71C07;
+  --color-brand-primary-hover: #C81705;
+  --color-brand-orange: #FB5C02;
+  --color-brand-yellow: #FEE962;
+  --color-brand-pan: #4C5861;
+  --color-brand-secondary: #111111;
+  --color-brand-accent: #E71C07;
+  --color-brand-dark: #111111;
+  --color-brand-body: #4C5861;
+  --color-brand-surface: #F2F3F3;
   --color-brand-light: #FFFFFF;
   --color-brand-white: #FFFFFF;
+  --color-brand-footer: #111111;
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-urdu: "KhanBaba", "Alvi Nastaleeq", "Jameel Noori Nastaleeq", var(--font-noto-urdu), serif;
 }
@@ -66,10 +72,16 @@ select {
 }
 
 :root {
-  /* 60-30-10 palette tokens */
-  --color-bg: #ffffff;       /* 60% dominant background */
-  --color-text: #111827;     /* 30% secondary/text */
-  --color-accent: #F87205;   /* 10% accent/CTA */
+  /* ZeeFood Gallery brand palette */
+  --color-bg: #FFFFFF;
+  --color-text: #111111;
+  --color-body: #4C5861;
+  --color-accent: #E71C07;
+  --color-accent-hover: #C81705;
+  --color-orange: #FB5C02;
+  --color-yellow: #FEE962;
+  --color-pan: #4C5861;
+  --color-muted: #F2F3F3;
   --button-radius: 1rem;     /* 16px = rounded-2xl */
   --font-noto-urdu: "Noto Nastaliq Urdu";
 }
@@ -793,7 +805,7 @@ input[type="reset"] {
 @media (hover: hover) {
   .deal-card:hover {
     transform: translateY(-0.25rem);
-    box-shadow: 0 24px 70px rgba(249, 114, 5, 0.16);
+    box-shadow: 0 24px 70px rgba(231, 28, 7, 0.16);
   }
 
   .deal-card:hover .deal-card-image {
@@ -805,8 +817,8 @@ input[type="reset"] {
   }
 
   .deal-card:hover .deal-card-includes {
-    border-color: #fed7aa;
-    background-color: rgba(255, 237, 213, 0.7);
+    border-color: rgba(231, 28, 7, 0.22);
+    background-color: rgba(231, 28, 7, 0.06);
   }
 
 }

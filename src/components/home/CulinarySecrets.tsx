@@ -126,7 +126,7 @@ export default function CulinarySecrets() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#fbf7f2] pb-7 pt-3 sm:pb-8 sm:pt-4 lg:pb-10 lg:pt-5">
+    <section className="relative w-full overflow-hidden bg-[#F2F3F3] pb-7 pt-3 sm:pb-8 sm:pt-4 lg:pb-10 lg:pt-5">
       <div className="site-container">
         <div className="rounded-[26px] border border-brand-primary/10 bg-white/35 p-4 shadow-[0_18px_55px_rgba(17,24,39,0.055)] backdrop-blur-sm sm:p-5 lg:p-6">
           <div className="grid gap-5 lg:grid-cols-[minmax(18rem,0.44fr)_1fr] lg:items-start lg:gap-5 2xl:gap-8">
@@ -143,7 +143,7 @@ export default function CulinarySecrets() {
 
               <div className="mt-4 grid gap-2">
                 {craftNotes.map((note, index) => (
-                  <div key={note} className="flex items-center gap-3 rounded-2xl border border-brand-primary/10 bg-[#fffdf8]/70 px-3 py-2">
+                  <div key={note} className="flex items-center gap-3 rounded-2xl border border-brand-primary/10 bg-[#FFFFFF]/70 px-3 py-2">
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-primary text-xs font-black text-white">
                       {String(index + 1).padStart(2, "0")}
                     </span>
@@ -154,7 +154,7 @@ export default function CulinarySecrets() {
 
               <Link
                 href="/menu"
-                className="mt-4 hidden min-h-11 items-center justify-center rounded-2xl bg-brand-primary px-7 text-sm font-black uppercase tracking-widest text-white no-underline shadow-[0_12px_26px_rgba(248,114,5,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-primary/90 hover:no-underline lg:inline-flex"
+                className="mt-4 hidden min-h-11 items-center justify-center rounded-2xl bg-brand-primary px-7 text-sm font-black uppercase tracking-widest text-white no-underline shadow-[0_12px_26px_rgba(231, 28, 7,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-primary/90 hover:no-underline lg:inline-flex"
               >
                 View Menu
               </Link>
@@ -195,7 +195,7 @@ export default function CulinarySecrets() {
 
           <Link
             href="/menu"
-            className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-2xl bg-brand-primary px-7 text-sm font-black uppercase tracking-widest text-white no-underline shadow-[0_12px_26px_rgba(248,114,5,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-primary/90 hover:no-underline lg:hidden"
+            className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-2xl bg-brand-primary px-7 text-sm font-black uppercase tracking-widest text-white no-underline shadow-[0_12px_26px_rgba(231, 28, 7,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-primary/90 hover:no-underline lg:hidden"
           >
             View Menu
           </Link>

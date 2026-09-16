@@ -37,7 +37,7 @@ export default function MockOrderSuccess({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#fbf7f2] px-6"
+          className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#F2F3F3] px-6"
         >
           <div className="flex w-full max-w-sm flex-col items-center text-center">
             {phase === "loading" ? (
@@ -63,7 +63,7 @@ export default function MockOrderSuccess({
                 transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
                 className="flex flex-col items-center"
               >
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-primary shadow-[0_16px_36px_rgba(248,114,5,0.35)]">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-primary shadow-[0_16px_36px_rgba(231, 28, 7,0.35)]">
                   <Check className="h-9 w-9 text-white" strokeWidth={3} />
                 </div>
                 <h2 className="mt-6 text-2xl font-black uppercase leading-tight tracking-tight text-brand-dark">

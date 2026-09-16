@@ -58,7 +58,7 @@ export default function TermsConditionsPage() {
           </p>
         </section>
 
-        <div className="mt-8 p-5 sm:p-7 bg-[#fffdf8] rounded-2xl text-brand-dark flex flex-col md:flex-row items-center gap-5 shadow-[0_24px_70px_rgba(248,114,5,0.10)] border border-brand-primary/15">
+        <div className="mt-8 p-5 sm:p-7 bg-[#FFFFFF] rounded-2xl text-brand-dark flex flex-col md:flex-row items-center gap-5 shadow-[0_24px_70px_rgba(231, 28, 7,0.10)] border border-brand-primary/15">
           <div className="text-6xl shrink-0">📜</div>
           <div>
             <h3 className="text-2xl font-black mb-3 italic text-brand-primary">Legal Commitment</h3>

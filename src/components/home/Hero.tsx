@@ -107,7 +107,7 @@ export default function Hero() {
   const item = heroItems[currentIndex];
 
   return (
-    <section className="relative flex min-h-[85svh] items-center overflow-hidden bg-[#fbf7f2] pb-2 pt-[3.5rem] sm:pb-2 sm:pt-[4rem] lg:pb-2 lg:pt-[4rem] 2xl:pt-[4.5rem]">
+    <section className="relative flex min-h-[85svh] items-center overflow-hidden bg-[#FFFFFF] pb-2 pt-28 sm:pb-2 sm:pt-32 lg:pb-2">
       <div className="site-container flex min-h-0 flex-col items-center">
         <div className="flex w-full flex-1 flex-col items-center gap-1 lg:flex-row lg:gap-3 2xl:gap-5 [@media(min-width:2200px)]:gap-6">
           <div className="relative z-10 max-w-3xl space-y-1 text-center sm:space-y-2 lg:w-1/2 lg:text-left 2xl:max-w-4xl">
@@ -152,9 +152,9 @@ function CircularHeroDisplay({
   return (
     // Balanced container size to fit non-overlapping images cleanly
     <div className="relative grid aspect-square w-[min(85vw,360px)] max-w-full place-items-center overflow-hidden rounded-full sm:w-[min(55vw,420px)] lg:w-[min(38vw,500px)] 2xl:w-[min(32vw,600px)] [@media(min-width:2200px)]:w-[min(28vw,680px)]">
-      <div className="absolute inset-[8%] rounded-full bg-[#fff8ef] shadow-[0_24px_52px_rgba(17,24,39,0.10)]" />
-      <div className="absolute inset-[15%] rounded-full border border-brand-primary/10 bg-[#fffaf4]" />
-      <div className="absolute inset-[27%] rounded-full border border-brand-primary/10 bg-[#fff3e5]" />
+      <div className="absolute inset-[8%] rounded-full bg-[#FFFFFF] shadow-[0_24px_52px_rgba(17,24,39,0.10)]" />
+      <div className="absolute inset-[15%] rounded-full border border-brand-primary/10 bg-[#FFFFFF]" />
+      <div className="absolute inset-[27%] rounded-full border border-brand-primary/10 bg-[#F2F3F3]" />
 
       <div
         className="absolute inset-[8%] transition-transform duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
@@ -187,8 +187,8 @@ function CircularHeroDisplay({
                 className="relative h-full w-full transition-transform duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
                 style={{ transform: `rotate(${-rotation}deg)` }}
               >
-                <div className="absolute inset-0 rounded-full bg-[#fff8ef] shadow-[0_16px_36px_rgba(248,114,5,0.10)]" />
-                <div className="absolute inset-[9%] rounded-full bg-[#fffdf9]" />
+                <div className="absolute inset-0 rounded-full bg-[#FFFFFF] shadow-[0_16px_36px_rgba(231, 28, 7,0.10)]" />
+                <div className="absolute inset-[9%] rounded-full bg-[#FFFFFF]" />
                 <Image
                   src={dish.image}
                   alt={dish.name}
@@ -209,7 +209,7 @@ function CircularHeroDisplay({
         key={heroItems[currentIndex].urduName}
         lang="ur"
         dir="rtl"
-        className="font-ama-dhaba pointer-events-none absolute bottom-[8%] left-1/2 z-40 -translate-x-1/2 animate-hero-copy-fade whitespace-nowrap rounded-full border border-brand-primary/15 bg-[#fff8ef]/95 px-4 py-0.5 text-[clamp(1.1rem,4vw,1.8rem)] font-black leading-normal text-brand-primary shadow-[0_8px_20px_rgba(248,114,5,0.15)] backdrop-blur-sm sm:bottom-[10%] lg:text-[clamp(1.4rem,2vw,2.2rem)]"
+        className="font-ama-dhaba pointer-events-none absolute bottom-[8%] left-1/2 z-40 -translate-x-1/2 animate-hero-copy-fade whitespace-nowrap rounded-full border border-brand-primary/15 bg-[#FFFFFF]/95 px-4 py-0.5 text-[clamp(1.1rem,4vw,1.8rem)] font-black leading-normal text-brand-primary shadow-[0_8px_20px_rgba(231, 28, 7,0.15)] backdrop-blur-sm sm:bottom-[10%] lg:text-[clamp(1.4rem,2vw,2.2rem)]"
       >
         {heroItems[currentIndex].urduName}
       </div>

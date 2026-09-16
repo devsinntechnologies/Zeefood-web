@@ -106,7 +106,7 @@ export default function ExploreMenu() {
   });
 
   return (
-    <section className="w-full bg-[#fbf7f2] pb-4 pt-2 sm:pb-5 sm:pt-3 lg:pb-6 lg:pt-3 2xl:pb-7 2xl:pt-4">
+    <section className="w-full bg-[#F2F3F3] pb-4 pt-2 sm:pb-5 sm:pt-3 lg:pb-6 lg:pt-3 2xl:pb-7 2xl:pt-4">
       <div className="site-container">
         <div className="mb-3 grid grid-cols-1 items-end gap-2 py-0 sm:mb-4 sm:grid-cols-[1fr_auto_1fr] 2xl:mb-5">
           <div className="hidden sm:block" />

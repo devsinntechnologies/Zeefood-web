@@ -47,8 +47,8 @@ const promoCards = [
     overlayFrom: "from-brand-dark/85",
     overlayTo: "to-transparent",
     overlayDir: "bg-gradient-to-t",
-    accentColor: "text-orange-300",
-    badgeColor: "bg-orange-500 text-white",
+    accentColor: "text-[#FEE962]",
+    badgeColor: "bg-brand-primary text-white",
     size: "small",
   },
   {
@@ -74,7 +74,7 @@ export default function PromoBanners() {
     <section className="bg-brand-light py-16 sm:py-20 lg:py-24 w-full relative z-10 overflow-hidden">
 
       {/* Subtle background texture */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none bg-[radial-gradient(ellipse_at_top_left,_rgba(248,114,5,0.07)_0%,_transparent_60%),radial-gradient(ellipse_at_bottom_right,_rgba(248,114,5,0.07)_0%,_transparent_60%)]" />
+      <div className="absolute inset-0 opacity-30 pointer-events-none bg-[radial-gradient(ellipse_at_top_left,_rgba(231, 28, 7,0.07)_0%,_transparent_60%),radial-gradient(ellipse_at_bottom_right,_rgba(231, 28, 7,0.07)_0%,_transparent_60%)]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
 
@@ -108,7 +108,7 @@ export default function PromoBanners() {
           <PromoCard card={promoCards[3]} className="md:col-span-2 lg:col-span-2" />
 
           {/* Extra CTA Card */}
-          <div className="md:col-span-2 lg:col-span-2 rounded-2xl sm:rounded-[2rem] bg-gradient-to-br from-brand-primary to-[#F87205] p-6 sm:p-8 lg:p-10 flex flex-col justify-between relative overflow-hidden group">
+          <div className="md:col-span-2 lg:col-span-2 rounded-2xl sm:rounded-[2rem] bg-gradient-to-br from-brand-primary to-[#E71C07] p-6 sm:p-8 lg:p-10 flex flex-col justify-between relative overflow-hidden group">
             {/* Decorative orb */}
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-1000 pointer-events-none" />
             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-black/10 rounded-full blur-xl pointer-events-none" />

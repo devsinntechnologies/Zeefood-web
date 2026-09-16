@@ -63,7 +63,7 @@ export default function OrderReview({
                 type="button"
                 onClick={onClose}
                 aria-label="Close"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#fbf7f2] text-brand-dark transition-colors hover:text-brand-primary"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#F2F3F3] text-brand-dark transition-colors hover:text-brand-primary"
               >
                 <X className="h-4 w-4" strokeWidth={2.5} />
               </button>
@@ -83,7 +83,7 @@ export default function OrderReview({
                       key={line.item.id}
                       className="flex items-center gap-3 rounded-2xl border border-gray-100 bg-white p-3 shadow-[0_8px_20px_rgba(17,24,39,0.04)]"
                     >
-                      <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-brand-primary/10 bg-[#fbf7f2]">
+                      <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-brand-primary/10 bg-[#F2F3F3]">
                         <Image
                           src={line.item.image}
                           alt={line.item.name}
@@ -102,7 +102,7 @@ export default function OrderReview({
                             &ldquo;{line.note}&rdquo;
                           </p>
                         )}
-                        <div className="mt-1.5 flex items-center gap-1 rounded-full border border-brand-primary/20 bg-[#fbf7f2] px-1 py-0.5 w-fit">
+                        <div className="mt-1.5 flex items-center gap-1 rounded-full border border-brand-primary/20 bg-[#F2F3F3] px-1 py-0.5 w-fit">
                           <button
                             type="button"
                             onClick={() => updateQuantity(line.item.id, -1)}
@@ -152,7 +152,7 @@ export default function OrderReview({
                     onChange={(e) => setOrderNote(e.target.value)}
                     placeholder="e.g. Please bring raita separately"
                     rows={2}
-                    className="w-full resize-none rounded-[14px] border border-gray-200 bg-[#fbf7f2] px-3.5 py-2.5 text-xs font-medium text-brand-dark placeholder:text-brand-dark/35 outline-none transition-all focus:border-brand-primary/40 focus:ring-2 focus:ring-brand-primary/10"
+                    className="w-full resize-none rounded-[14px] border border-gray-200 bg-[#F2F3F3] px-3.5 py-2.5 text-xs font-medium text-brand-dark placeholder:text-brand-dark/35 outline-none transition-all focus:border-brand-primary/40 focus:ring-2 focus:ring-brand-primary/10"
                   />
                 </div>
               )}
@@ -167,7 +167,7 @@ export default function OrderReview({
                 <button
                   type="button"
                   onClick={onConfirm}
-                  className="flex w-full items-center justify-between rounded-full bg-brand-primary px-6 py-3.5 text-white shadow-[0_10px_24px_rgba(248,114,5,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[#e96500]"
+                  className="flex w-full items-center justify-between rounded-full bg-brand-primary px-6 py-3.5 text-white shadow-[0_10px_24px_rgba(231, 28, 7,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[#C81705]"
                 >
                   <span className="text-[11px] font-black uppercase tracking-[0.2em]">
                     Confirm Order

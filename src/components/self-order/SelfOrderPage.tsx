@@ -63,12 +63,12 @@ export default function SelfOrderPage({ tableId }: { tableId: string }) {
   }, [registerTable, tableId]);
 
   if (loading) {
-    return <div className="min-h-screen bg-[#fbf7f2]" />;
+    return <div className="min-h-screen bg-[#F2F3F3]" />;
   }
 
   if (loadError) {
     return (
-      <div className="mt-20 flex min-h-[60vh] flex-col items-center justify-center px-6 text-center">
+      <div className="mt-28 flex min-h-[60vh] flex-col items-center justify-center px-6 text-center sm:mt-32">
         <p className="text-2xl font-black text-brand-dark">Unable to open table menu</p>
         <p className="mt-2 max-w-md text-sm font-semibold text-brand-dark/60">{loadError}</p>
       </div>

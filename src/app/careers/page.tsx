@@ -23,7 +23,7 @@ export default function CareersPage() {
               { title: "Innovation", desc: "Work with cutting-edge kitchen and delivery tech." },
               { title: "Culture", desc: "A family-first environment built on mutual respect." }
             ].map((feature, i) => (
-              <div key={i} className="bg-white p-5 sm:p-6 rounded-2xl border border-brand-primary/10 shadow-sm hover:shadow-[0_16px_38px_rgba(248,114,5,0.10)] transition-shadow">
+              <div key={i} className="bg-white p-5 sm:p-6 rounded-2xl border border-brand-primary/10 shadow-sm hover:shadow-[0_16px_38px_rgba(231, 28, 7,0.10)] transition-shadow">
                 <h4 className="text-brand-primary font-black text-xl mb-3">{feature.title}</h4>
                 <p className="text-brand-dark/70 font-medium leading-relaxed">{feature.desc}</p>
               </div>
@@ -46,7 +46,7 @@ export default function CareersPage() {
               <Link 
                 key={i}
                 href="/contact" 
-                className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-5 sm:p-6 bg-white border border-brand-primary/10 rounded-2xl hover:border-brand-primary/30 hover:shadow-[0_18px_42px_rgba(248,114,5,0.10)] transition-all group"
+                className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-5 sm:p-6 bg-white border border-brand-primary/10 rounded-2xl hover:border-brand-primary/30 hover:shadow-[0_18px_42px_rgba(231, 28, 7,0.10)] transition-all group"
               >
                 <div>
                   <h4 className="font-black text-brand-dark text-2xl group-hover:text-brand-primary transition-colors">{job.title}</h4>

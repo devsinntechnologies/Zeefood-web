@@ -349,7 +349,7 @@ function ProductQuickAddModal({
                         className={`flex items-center justify-between rounded-[12px] border px-4 py-2.5 text-left transition-all duration-200 ${
                           isSelected
                             ? "border-brand-primary bg-brand-primary/8 ring-2 ring-brand-primary/25"
-                            : "border-gray-200 bg-[#fbf7f2] hover:border-brand-primary/40"
+                            : "border-gray-200 bg-[#F2F3F3] hover:border-brand-primary/40"
                         }`}
                       >
                         <div className="flex items-center gap-2">
@@ -400,12 +400,12 @@ function ProductQuickAddModal({
                 onChange={(e) => setSpecialInstructions(e.target.value)}
                 placeholder="Any special requests? (e.g. less spicy, extra sauce)"
                 rows={2}
-                className="w-full resize-none rounded-[12px] border border-gray-200 bg-[#fbf7f2] px-3 py-2.5 text-xs font-medium text-brand-dark placeholder:text-brand-dark/35 focus:border-brand-primary/40 focus:outline-none focus:ring-2 focus:ring-brand-primary/10 transition-all"
+                className="w-full resize-none rounded-[12px] border border-gray-200 bg-[#F2F3F3] px-3 py-2.5 text-xs font-medium text-brand-dark placeholder:text-brand-dark/35 focus:border-brand-primary/40 focus:outline-none focus:ring-2 focus:ring-brand-primary/10 transition-all"
               />
             </div>
 
             <div className="mt-auto flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
-              <div className="flex h-11 w-full shrink-0 items-center justify-between gap-1 rounded-full border border-brand-primary/25 bg-[#fbf7f2] px-2 shadow-sm sm:w-auto">
+              <div className="flex h-11 w-full shrink-0 items-center justify-between gap-1 rounded-full border border-brand-primary/25 bg-[#F2F3F3] px-2 shadow-sm sm:w-auto">
                 <button
                   type="button"
                   onClick={handleLocalDecrease}
@@ -430,7 +430,7 @@ function ProductQuickAddModal({
               <button
                 type="button"
                 onClick={handleConfirm}
-                className="flex h-11 w-full min-w-0 items-center justify-center whitespace-nowrap rounded-full bg-brand-primary px-4 text-[11px] font-black uppercase tracking-[0.12em] text-white shadow-[0_8px_20px_rgba(248,114,5,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[#e96500] sm:flex-1"
+                className="flex h-11 w-full min-w-0 items-center justify-center whitespace-nowrap rounded-full bg-brand-primary px-4 text-[11px] font-black uppercase tracking-[0.12em] text-white shadow-[0_8px_20px_rgba(231, 28, 7,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[#C81705] sm:flex-1"
               >
                 Add to Cart
               </button>
@@ -554,7 +554,7 @@ function ItemManagementModal({
             <button
               type="button"
               onClick={onRemove}
-              className="flex-1 rounded-full bg-brand-primary py-2.5 px-4.5 text-[10px] font-black uppercase tracking-widest text-white shadow-[0_8px_20px_rgba(248,114,5,0.28)] transition-all hover:bg-[#e96500] hover:shadow-[0_12px_28px_rgba(248,114,5,0.35)] hover:-translate-y-0.5"
+              className="flex-1 rounded-full bg-brand-primary py-2.5 px-4.5 text-[10px] font-black uppercase tracking-widest text-white shadow-[0_8px_20px_rgba(231, 28, 7,0.28)] transition-all hover:bg-[#C81705] hover:shadow-[0_12px_28px_rgba(231, 28, 7,0.35)] hover:-translate-y-0.5"
             >
               Remove item
             </button>
@@ -629,7 +629,7 @@ export function VariantProductCard({
   return (
     <>
       <article
-        className="group relative h-[250px] sm:h-[270px] lg:h-[290px] xl:h-[300px] w-full overflow-hidden rounded-[18px] bg-white shadow-[0_4px_16px_rgba(17,24,39,0.06)] ring-1 ring-brand-primary/10 transition-all duration-300 hover:-translate-y-1 hover:ring-brand-primary/25 hover:shadow-[0_12px_24px_rgba(248,114,5,0.12)] cursor-pointer"
+        className="group relative h-[250px] sm:h-[270px] lg:h-[290px] xl:h-[300px] w-full overflow-hidden rounded-[18px] bg-white shadow-[0_4px_16px_rgba(17,24,39,0.06)] ring-1 ring-brand-primary/10 transition-all duration-300 hover:-translate-y-1 hover:ring-brand-primary/25 hover:shadow-[0_12px_24px_rgba(231, 28, 7,0.12)] cursor-pointer"
         onClick={(e) => handleOpenModal(e)}
         style={{
           backgroundImage: `url(${productImageUrl(product.image, product.name, categoryName)})`,
@@ -681,7 +681,7 @@ export function VariantProductCard({
                 type="button"
                 disabled={!isActive}
                 onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleOpenModal(e); }}
-                className="flex w-full h-[36px] items-center justify-center rounded-full bg-brand-primary px-4 text-[10px] font-black uppercase tracking-widest text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e96500] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-80"
+                className="flex w-full h-[36px] items-center justify-center rounded-full bg-brand-primary px-4 text-[10px] font-black uppercase tracking-widest text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C81705] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-80"
               >
                 Add to Cart
               </button>
@@ -817,16 +817,16 @@ export default function OrderPage() {
   const safeProducts = Array.isArray(filteredProducts) ? filteredProducts : [];
 
   return (
-    <div className="mt-20 flex min-h-[calc(100svh-80px)] flex-col bg-[#fbf7f2] font-sans pb-28">
+    <div className="mt-28 flex min-h-[calc(100svh-7rem)] flex-col bg-[#F2F3F3] font-sans pb-28 sm:mt-32 sm:min-h-[calc(100svh-8rem)]">
       <div className="relative mx-auto flex w-full max-w-[1720px] flex-1 flex-col px-3 sm:px-4 md:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-8">
 
         {/* ── Main Menu Panel ── */}
-        <div className="flex-1 bg-[#fbf7f2]">
+        <div className="flex-1 bg-[#F2F3F3]">
           <div className="mb-5 rounded-[20px] border border-brand-primary/10 bg-white/35 p-4 sm:p-6 shadow-[0_8px_24px_rgba(17,24,39,0.03)] backdrop-blur-sm sm:mb-6">
-            <h1 className={`mb-1 text-2xl sm:text-3xl font-black tracking-tight text-[#111827] lg:text-4xl ${language === "UR" ? "text-right font-ama-dhaba" : ""}`}>
+            <h1 className={`mb-1 text-2xl sm:text-3xl font-black tracking-tight text-[#111111] lg:text-4xl ${language === "UR" ? "text-right font-ama-dhaba" : ""}`}>
               {isSelfOrder ? `Table ${table?.tableNumber}` : t("orderDelivery")}
             </h1>
-            <p className={`mb-5 text-xs sm:text-sm font-semibold text-[#111827]/70 lg:text-base ${language === "UR" ? "text-right" : ""}`}>
+            <p className={`mb-5 text-xs sm:text-sm font-semibold text-[#111111]/70 lg:text-base ${language === "UR" ? "text-right" : ""}`}>
               {isSelfOrder
                 ? "Browse the menu and send your order to the waiter. It is confirmed after approval."
                 : t("exclusiveChefMeals")}
@@ -878,7 +878,7 @@ export default function OrderPage() {
                       className={`relative flex-none min-w-[95px] sm:min-w-[110px] md:min-w-[120px] max-w-[130px] flex-shrink-0 flex-col items-center justify-center overflow-hidden rounded-[16px] px-2.5 py-2.5 sm:px-3 sm:py-3 text-center text-[10px] sm:text-[11px] font-black uppercase tracking-widest transition-all duration-300 ${
                         imageSrc
                           ? isActive
-                            ? "text-white shadow-[0_8px_20px_rgba(248,114,5,0.18)] border border-brand-primary"
+                            ? "text-white shadow-[0_8px_20px_rgba(231, 28, 7,0.18)] border border-brand-primary"
                             : "border border-white/25 text-white"
                           : isActive
                             ? "border border-brand-primary/25 bg-transparent text-brand-primary"
@@ -917,7 +917,7 @@ export default function OrderPage() {
                 <p className="text-brand-dark/50 text-sm mb-5">{String(error || "")}</p>
                 <button
                   onClick={() => refetch()}
-                  className="px-8 py-3.5 bg-brand-primary text-white font-black text-sm uppercase tracking-widest rounded-full shadow-md hover:shadow-[0_12px_24px_rgba(248,114,5,0.3)] hover:-translate-y-0.5 transition-all"
+                  className="px-8 py-3.5 bg-brand-primary text-white font-black text-sm uppercase tracking-widest rounded-full shadow-md hover:shadow-[0_12px_24px_rgba(231, 28, 7,0.3)] hover:-translate-y-0.5 transition-all"
                 >
                   Try Again
                 </button>
@@ -984,7 +984,7 @@ export function CartContent({
   const safeCart = Array.isArray(cart) ? cart : [];
 
   return (
-    <div className="flex h-full flex-col overflow-hidden bg-[#fbf7f2]">
+    <div className="flex h-full flex-col overflow-hidden bg-[#F2F3F3]">
       <div className="flex flex-1 flex-col gap-4 overflow-y-auto px-4 py-5 no-scrollbar sm:px-6">
         {safeCart.length === 0 ? (
           <div className="flex h-full flex-col items-center justify-center px-4 text-center text-brand-dark/70">
@@ -1036,7 +1036,7 @@ export function CartContent({
                   className={`rounded-2xl border border-gray-200 bg-white p-4 shadow-[0_12px_32px_rgba(17,24,39,0.045)] transition-all duration-300 hover:border-brand-primary/20 ${language === "UR" ? "text-right" : ""}`}
                 >
                   <div className={`grid grid-cols-[72px_minmax(0,1fr)] gap-4 sm:grid-cols-[80px_minmax(0,1fr)] ${language === "UR" ? "direction-rtl" : ""}`}>
-                    <div className="cart-item-image relative flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-brand-primary/10 bg-[#fbf7f2] sm:h-[80px] sm:w-[80px]">
+                    <div className="cart-item-image relative flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-brand-primary/10 bg-[#F2F3F3] sm:h-[80px] sm:w-[80px]">
                       <Image
                         src={c.item.image || "/images/placeholder-food.png"}
                         alt={cleanName}
@@ -1082,7 +1082,7 @@ export function CartContent({
                               const vName = variantObj?.name || vId;
                               const vPrice = variantObj?.price || unitPrice;
                               return (
-                                <div key={vId} className="flex items-center justify-between text-xs text-brand-dark/70 font-semibold bg-[#fbf7f2] p-2 rounded-xl border border-brand-primary/5">
+                                <div key={vId} className="flex items-center justify-between text-xs text-brand-dark/70 font-semibold bg-[#F2F3F3] p-2 rounded-xl border border-brand-primary/5">
                                   <span>{vName} Portion (Rs. {vPrice.toLocaleString()})</span>
                                   <div className="flex items-center gap-1.5 rounded-xl bg-white p-1 shadow-sm">
                                     <button
@@ -1106,7 +1106,7 @@ export function CartContent({
                             })}
                         </div>
                       ) : (
-                        <div className="mt-4 grid grid-cols-1 items-stretch gap-3 rounded-2xl bg-[#fbf7f2] p-2 min-[420px]:grid-cols-[1fr_auto_1fr] min-[420px]:items-center">
+                        <div className="mt-4 grid grid-cols-1 items-stretch gap-3 rounded-2xl bg-[#F2F3F3] p-2 min-[420px]:grid-cols-[1fr_auto_1fr] min-[420px]:items-center">
                           <div>
                             <span className="block text-[9px] font-black uppercase tracking-widest text-brand-dark/40">Price</span>
                             <span className="block text-sm font-black text-brand-dark">{money(unitPrice)}</span>
@@ -1115,7 +1115,7 @@ export function CartContent({
                           <div className={`flex items-center justify-center gap-1.5 rounded-xl bg-white p-1 shadow-sm ${language === "UR" ? "flex-row-reverse" : ""}`}>
                             <button
                               onClick={() => updateQuantity(c.item.id, -1)}
-                              className="flex h-8 w-8 items-center justify-center rounded-xl text-brand-dark transition-colors hover:bg-[#fbf7f2] hover:text-brand-primary"
+                              className="flex h-8 w-8 items-center justify-center rounded-xl text-brand-dark transition-colors hover:bg-[#F2F3F3] hover:text-brand-primary"
                               aria-label="Decrease quantity"
                             >
                               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -1125,7 +1125,7 @@ export function CartContent({
                             <span className="flex h-8 w-8 items-center justify-center text-center text-base font-black text-brand-dark">{c.quantity}</span>
                             <button
                               onClick={() => updateQuantity(c.item.id, 1)}
-                              className="flex h-8 w-8 items-center justify-center rounded-xl text-brand-dark transition-colors hover:bg-[#fbf7f2] hover:text-brand-primary"
+                              className="flex h-8 w-8 items-center justify-center rounded-xl text-brand-dark transition-colors hover:bg-[#F2F3F3] hover:text-brand-primary"
                               aria-label="Increase quantity"
                             >
                               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>

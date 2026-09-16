@@ -90,23 +90,20 @@ export default function LocationModal() {
 
   return (
     <div className="fixed inset-0 z-[1000] flex items-center justify-center overflow-hidden bg-brand-dark/70 p-4 backdrop-blur-[8px] animate-in fade-in duration-300 ease-in-out">
-      <div className="relative w-full max-w-[440px] overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-br from-white via-orange-50/80 to-brand-surface px-5 py-5 shadow-[0_30px_100px_rgba(0,0,0,0.20),0_8px_28px_rgba(248,114,5,0.10)] animate-in zoom-in-95 duration-300 ease-in-out sm:px-7">
-        <div className="absolute inset-0 bg-[linear-gradient(125deg,rgba(248,114,5,0.12),rgba(255,255,255,0.72)_44%,rgba(248,114,5,0.08)),radial-gradient(circle_at_80%_35%,rgba(248,114,5,0.16),transparent_34%),radial-gradient(circle_at_10%_18%,rgba(17,24,39,0.06),transparent_28%)]" />
+      <div className="relative w-full max-w-[440px] overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-br from-white via-white to-brand-surface px-5 py-5 shadow-[0_30px_100px_rgba(0,0,0,0.20),0_8px_28px_rgba(231, 28, 7,0.10)] animate-in zoom-in-95 duration-300 ease-in-out sm:px-7">
+        <div className="absolute inset-0 bg-[linear-gradient(125deg,rgba(231, 28, 7,0.12),rgba(255,255,255,0.72)_44%,rgba(231, 28, 7,0.08)),radial-gradient(circle_at_80%_35%,rgba(231, 28, 7,0.16),transparent_34%),radial-gradient(circle_at_10%_18%,rgba(17,24,39,0.06),transparent_28%)]" />
 
         <div className="relative z-10">
           <header className="flex flex-col items-center text-center">
-            <div className="flex items-center justify-center gap-3">
-              <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-brand-primary/20 bg-white/95 shadow-[inset_0_0_0_7px_rgba(248,114,5,0.08),0_14px_28px_rgba(248,114,5,0.16)]">
-                <div className="relative h-12 w-12">
-                  <Image src="/fiery-wok.png" alt="Ama G Ka Dhaba logo" fill className="object-contain" priority />
-                </div>
-              </div>
-              <div className="min-w-0 text-left">
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-dark/45">Zee Food Gallery</p>
-                <h2 lang="ur" dir="rtl" className="font-ama-dhaba text-[30px] font-bold leading-tight text-brand-primary">
-                  اماں جی کا ڈھابہ
-                </h2>
-              </div>
+            <div className="relative h-32 w-56 sm:h-36 sm:w-64">
+              <Image
+                src="/logo2.png"
+                alt="ZeeFood Gallery"
+                fill
+                className="object-contain drop-shadow-[0_8px_20px_rgba(17,17,17,0.12)]"
+                priority
+                unoptimized
+              />
             </div>
           </header>
 
@@ -212,7 +209,7 @@ export default function LocationModal() {
               className={`mt-5 mx-auto flex min-h-12 w-full max-w-[330px] items-center justify-center text-center rounded-full px-7 text-sm font-black transition-all duration-300 ease-in-out ${
                 isButtonDisabled
                   ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                  : "bg-brand-primary text-white shadow-[0_16px_32px_rgba(248,114,5,0.24)] hover:-translate-y-0.5 hover:bg-brand-primary/90 hover:shadow-[0_18px_34px_rgba(248,114,5,0.30)]"
+                  : "bg-brand-primary text-white shadow-[0_16px_32px_rgba(231, 28, 7,0.24)] hover:-translate-y-0.5 hover:bg-brand-primary/90 hover:shadow-[0_18px_34px_rgba(231, 28, 7,0.30)]"
               }`}
             >
               (Only in Samanabad)
@@ -246,7 +243,7 @@ function OrderPill({
       onClick={onClick}
       className={`min-h-10 min-w-28 rounded-full border px-6 text-sm font-bold transition-all duration-300 ${
         active
-          ? "border-brand-primary bg-brand-primary text-white shadow-[0_10px_22px_rgba(248,114,5,0.24)]"
+          ? "border-brand-primary bg-brand-primary text-white shadow-[0_10px_22px_rgba(231, 28, 7,0.24)]"
           : "border-transparent bg-transparent text-brand-dark/70 hover:bg-brand-primary/10 hover:text-brand-primary"
       }`}
     >

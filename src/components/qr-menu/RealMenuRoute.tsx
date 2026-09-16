@@ -89,12 +89,12 @@ function RealQRMenuExperience({ businessId }: { businessId: string }) {
     ) : null;
 
   if (isLoading) {
-    return <div className="min-h-[100dvh] bg-[#fbf7f2]" />;
+    return <div className="min-h-[100dvh] bg-[#F2F3F3]" />;
   }
 
   if (isError) {
     return (
-      <div className="flex min-h-[100dvh] flex-col items-center justify-center gap-4 bg-[#fbf7f2] px-6 text-center">
+      <div className="flex min-h-[100dvh] flex-col items-center justify-center gap-4 bg-[#F2F3F3] px-6 text-center">
         <p className="text-lg font-black text-brand-dark">Failed to load menu</p>
         <p className="text-sm text-brand-dark/50">{String(error || "")}</p>
         <button

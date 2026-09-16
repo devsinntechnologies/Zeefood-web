@@ -19,7 +19,7 @@ export default function MenuItem({
       <button
         type="button"
         onClick={() => onOpen(item)}
-        className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-brand-primary/10 bg-[#fbf7f2]"
+        className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-brand-primary/10 bg-[#F2F3F3]"
       >
         <Image
           src={item.image}
@@ -43,7 +43,7 @@ export default function MenuItem({
 
       <div className="shrink-0">
         {quantity > 0 ? (
-          <div className="flex h-8 items-center gap-1 rounded-full border border-brand-primary/25 bg-[#fbf7f2] px-1 shadow-sm">
+          <div className="flex h-8 items-center gap-1 rounded-full border border-brand-primary/25 bg-[#F2F3F3] px-1 shadow-sm">
             <button
               type="button"
               onClick={() => updateQuantity(item.id, -1)}
@@ -68,7 +68,7 @@ export default function MenuItem({
           <button
             type="button"
             onClick={() => onOpen(item)}
-            className="rounded-full bg-brand-primary px-3.5 py-1.5 text-[10px] font-black uppercase tracking-wider text-white shadow-[0_6px_14px_rgba(248,114,5,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#e96500]"
+            className="rounded-full bg-brand-primary px-3.5 py-1.5 text-[10px] font-black uppercase tracking-wider text-white shadow-[0_6px_14px_rgba(231, 28, 7,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#C81705]"
           >
             + Add
           </button>

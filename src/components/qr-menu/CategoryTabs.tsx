@@ -44,7 +44,7 @@ export default function CategoryTabs({
             onClick={() => onSelect(category.id)}
             className={`flex-none whitespace-nowrap rounded-full px-4 py-2 text-[11px] font-black uppercase tracking-wider transition-all duration-300 ${
               isActive
-                ? "bg-brand-primary text-white shadow-[0_6px_14px_rgba(248,114,5,0.28)]"
+                ? "bg-brand-primary text-white shadow-[0_6px_14px_rgba(231, 28, 7,0.28)]"
                 : "border border-brand-primary/15 bg-white text-brand-dark/60 hover:border-brand-primary/30 hover:text-brand-primary"
             }`}
           >

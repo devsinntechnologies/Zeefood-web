@@ -70,7 +70,7 @@ export default function AboutSection() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <section className="py-8 sm:py-10 lg:py-12 2xl:py-14 bg-[#fbf7f2] overflow-hidden">
+    <section className="py-8 sm:py-10 lg:py-12 2xl:py-14 bg-[#F2F3F3] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Header */}
@@ -91,7 +91,7 @@ export default function AboutSection() {
         <div className="mb-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-center max-w-4xl mx-auto">
             <div className="flex justify-center md:justify-start">
-              <div className="no-cut-image w-56 h-64 md:w-72 md:h-80 rounded-[2rem] overflow-hidden bg-[#fffdf8] shadow-[0_20px_55px_rgba(15,23,42,0.08)] ring-1 ring-brand-primary/15">
+              <div className="no-cut-image w-56 h-64 md:w-72 md:h-80 rounded-[2rem] overflow-hidden bg-[#FFFFFF] shadow-[0_20px_55px_rgba(15,23,42,0.08)] ring-1 ring-brand-primary/15">
                 <Image
                   src="/amir-bhai.jpeg"
                   alt="Mr Amir"
@@ -123,7 +123,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           
           {/* Card 1: Fresh Food */}
-          <div className="group relative bg-[#fffdf8] border border-brand-primary/10 p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-[2rem] transition-all duration-500 hover:-translate-y-2 hover:border-brand-primary/25 hover:bg-brand-primary/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
+          <div className="group relative bg-[#FFFFFF] border border-brand-primary/10 p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-[2rem] transition-all duration-500 hover:-translate-y-2 hover:border-brand-primary/25 hover:bg-brand-primary/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
             {/* <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mb-10 shadow-xl group-hover:scale-110 transition-transform duration-500">
                <span className="text-4xl">🥗</span>
             </div> */}
@@ -139,7 +139,7 @@ export default function AboutSection() {
           </div>
 
           {/* Card 2: Local Staff */}
-          <div className="group relative bg-[#fffdf8] border border-brand-primary/10 p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-[2rem] transition-all duration-500 hover:-translate-y-2 hover:border-brand-primary/25 hover:bg-brand-primary/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)] lg:mt-8">
+          <div className="group relative bg-[#FFFFFF] border border-brand-primary/10 p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-[2rem] transition-all duration-500 hover:-translate-y-2 hover:border-brand-primary/25 hover:bg-brand-primary/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)] lg:mt-8">
             {/* <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mb-10 shadow-xl group-hover:scale-110 transition-transform duration-500">
                <span className="text-4xl">👨‍🍳</span>
             </div> */}
@@ -154,7 +154,7 @@ export default function AboutSection() {
           </div>
 
           {/* Card 3: Authentic Desi */}
-          <div className="group relative bg-[#fffdf8] border border-brand-primary/10 p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-[2rem] transition-all duration-500 hover:-translate-y-2 hover:border-brand-primary/25 hover:bg-brand-primary/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
+          <div className="group relative bg-[#FFFFFF] border border-brand-primary/10 p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-[2rem] transition-all duration-500 hover:-translate-y-2 hover:border-brand-primary/25 hover:bg-brand-primary/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
             {/* <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mb-10 shadow-xl group-hover:scale-110 transition-transform duration-500">
                <span className="text-4xl">🥘</span>
             </div> */}
@@ -170,7 +170,7 @@ export default function AboutSection() {
 
         </div>
         {/* My Vision Section */}
-        <div className="mt-9 sm:mt-10 max-w-4xl mx-auto rounded-2xl sm:rounded-[2rem] border border-brand-primary/10 bg-gradient-to-br from-brand-primary/5 via-[#fffdf8] to-brand-secondary/5 p-5 sm:p-6 lg:p-8 shadow-sm text-center">
+        <div className="mt-9 sm:mt-10 max-w-4xl mx-auto rounded-2xl sm:rounded-[2rem] border border-brand-primary/10 bg-gradient-to-br from-brand-primary/5 via-[#FFFFFF] to-brand-secondary/5 p-5 sm:p-6 lg:p-8 shadow-sm text-center">
           <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.35em] text-brand-primary mb-4">
             <span className="h-px w-8 bg-brand-primary" />
             My Vision
@@ -183,7 +183,7 @@ export default function AboutSection() {
 
         {/* Journey + Highlights */}
         <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6 2xl:gap-8 items-start">
-          <div className="rounded-2xl sm:rounded-[2rem] bg-[#fffdf8] border border-brand-primary/10 p-5 sm:p-6 lg:p-7 shadow-sm">
+          <div className="rounded-2xl sm:rounded-[2rem] bg-[#FFFFFF] border border-brand-primary/10 p-5 sm:p-6 lg:p-7 shadow-sm">
             <span className="text-brand-primary text-[10px] sm:text-xs font-black tracking-widest uppercase">Our Journey</span>
             <h3 className="mt-3 text-2xl sm:text-3xl font-medium text-brand-dark">From a family idea to a neighborhood favorite</h3>
             <div className="mt-5 space-y-4">
@@ -201,7 +201,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div className="rounded-2xl sm:rounded-[2rem] bg-[#fffdf8] border border-brand-primary/10 p-5 sm:p-6 lg:p-7 shadow-sm">
+          <div className="rounded-2xl sm:rounded-[2rem] bg-[#FFFFFF] border border-brand-primary/10 p-5 sm:p-6 lg:p-7 shadow-sm">
             <div className="border-l-4 border-brand-primary/25 pl-5">
               <span className="text-brand-primary text-[10px] sm:text-xs font-black tracking-widest uppercase">What makes us different</span>
               <h3 className="mt-3 text-2xl sm:text-3xl font-medium text-brand-dark">A kitchen built on trust, taste, and consistency</h3>

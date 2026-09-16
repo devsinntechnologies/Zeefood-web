@@ -115,8 +115,8 @@ export default function QRMenuLayout({
   };
 
   return (
-    <div className="flex h-[100dvh] flex-col bg-[#fbf7f2]">
-      <div ref={stickyRef} className="sticky top-0 z-30 shrink-0 bg-[#fbf7f2]/95 backdrop-blur-sm">
+    <div className="flex h-[100dvh] flex-col bg-[#F2F3F3]">
+      <div ref={stickyRef} className="sticky top-0 z-30 shrink-0 bg-[#F2F3F3]/95 backdrop-blur-sm">
         <QRMenuHeader tableNumber={tableNumber} onOpenOrder={onOpenReview} />
         {banner}
         <div className="border-b border-brand-primary/10">

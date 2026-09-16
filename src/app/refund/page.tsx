@@ -29,7 +29,7 @@ export default function RefundPage() {
               { t: "Missing Items", d: "Any missing items will be refunded to your original payment method." },
               { t: "Quality Issues", d: "If food quality is compromised during transit, we take full responsibility." }
             ].map((item, i) => (
-              <div key={i} className="p-5 sm:p-6 bg-white border border-brand-primary/10 rounded-2xl shadow-sm hover:shadow-[0_16px_38px_rgba(248,114,5,0.10)] transition-all">
+              <div key={i} className="p-5 sm:p-6 bg-white border border-brand-primary/10 rounded-2xl shadow-sm hover:shadow-[0_16px_38px_rgba(231, 28, 7,0.10)] transition-all">
                 <div className="w-12 h-12 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-4 text-brand-primary">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -49,7 +49,7 @@ export default function RefundPage() {
           </p>
         </section>
 
-        <div className="mt-8 p-5 sm:p-7 bg-[#fffdf8] rounded-2xl text-brand-dark flex flex-col md:flex-row items-center gap-5 shadow-[0_24px_70px_rgba(248,114,5,0.10)] border border-brand-primary/15">
+        <div className="mt-8 p-5 sm:p-7 bg-[#FFFFFF] rounded-2xl text-brand-dark flex flex-col md:flex-row items-center gap-5 shadow-[0_24px_70px_rgba(231, 28, 7,0.10)] border border-brand-primary/15">
           <div className="text-6xl shrink-0">💳</div>
           <div>
             <h3 className="text-2xl font-black mb-2 italic text-brand-primary">Processing Time</h3>

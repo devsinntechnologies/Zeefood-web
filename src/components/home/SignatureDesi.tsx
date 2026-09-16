@@ -95,7 +95,7 @@ export default function SignatureDesi() {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#fbf7f2] pb-5 pt-5 sm:pb-6 sm:pt-6 lg:pb-7 lg:pt-7 2xl:pb-8 2xl:pt-8">
+    <section className="relative w-full bg-[#F2F3F3] pb-5 pt-5 sm:pb-6 sm:pt-6 lg:pb-7 lg:pt-7 2xl:pb-8 2xl:pt-8">
       <div className="site-container">
         <div className="mb-4 flex flex-col items-center py-0 text-center sm:mb-5 2xl:mb-6">
           <h2 className="text-[clamp(2rem,9vw,3rem)] font-black uppercase leading-none tracking-tight text-brand-primary lg:text-5xl">
@@ -144,7 +144,7 @@ export default function SignatureDesi() {
         <div className="mt-4 flex justify-center">
           <Link
             href="/menu"
-            className="inline-flex items-center justify-center rounded-2xl border-2 border-brand-primary bg-transparent px-9 py-3.5 font-black uppercase tracking-widest text-brand-primary no-underline transition-all duration-300 hover:-translate-y-1 hover:bg-brand-primary hover:text-white hover:no-underline hover:shadow-[0_15px_30px_rgba(248,114,5,0.30)]"
+            className="inline-flex items-center justify-center rounded-2xl border-2 border-brand-primary bg-transparent px-9 py-3.5 font-black uppercase tracking-widest text-brand-primary no-underline transition-all duration-300 hover:-translate-y-1 hover:bg-brand-primary hover:text-white hover:no-underline hover:shadow-[0_15px_30px_rgba(231, 28, 7,0.30)]"
           >
             {t("viewMenu")}
           </Link>

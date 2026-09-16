@@ -35,7 +35,7 @@ export const allMenuItems: MenuItem[] = [
     descriptionUr: "بہترین آرام دہ کھانا۔ خوشبودار باسمتی چاولوں کے ساتھ پیش کی جانے والی ہلکی آنچ پر پکی ہوئی پیلی دال۔",
     price: "Rs. 450",
     image: "/images/home/menu/daal_chawal.png",
-    bgClass: "bg-gradient-to-br from-yellow-50 to-orange-50",
+    bgClass: "bg-gradient-to-br from-yellow-50 to-red-50",
     details: {
       recipe: "Our Daal is a blend of Moong and Masoor lentils, slow-cooked for hours with turmeric, salt, and garlic. The 'Tarka' is the secret—sizzling oil with cumin, whole red chilies, and crispy garlic poured over the lentils just before serving.",
       recipeUr: "ہماری دال مونگ اور مسور کا آمیزہ ہے، جسے ہلدی، نمک اور لہسن کے ساتھ گھنٹوں پکایا جاتا ہے۔ اس کا اصل راز 'تڑکہ' ہے—زیرہ، گول لال مرچ اور کڑک لہسن کا گرم تڑکہ جو پیش کرنے سے پہلے دال پر ڈالا جاتا ہے۔",
@@ -55,7 +55,7 @@ export const allMenuItems: MenuItem[] = [
     descriptionUr: "روایتی سٹریٹ سٹائل چکن کڑاہی، مصالحوں اور ادرک کے بہترین توازن کے ساتھ۔",
     price: "Rs. 1,450",
     image: "/images/home/menu/chicken_karahi.png",
-    bgClass: "bg-gradient-to-br from-red-50 to-orange-50",
+    bgClass: "bg-gradient-to-br from-red-50 to-red-50",
     details: {
       recipe: "Fresh chicken pieces stir-fried on high flame in a wok with tomatoes, ginger julienne, and crushed black pepper. No onions are used, ensuring an authentic 'Shinwari' style flavor that is both spicy and tangy.",
       recipeUr: "تازہ چکن کے ٹکڑوں کو ٹماٹر، باریک کٹی ادرک اور کٹی کالی مرچ کے ساتھ تیز آنچ پر کڑاہی میں بھونا جاتا ہے۔ پیاز کا استعمال نہیں کیا جاتا، جس سے ایک اصلی 'شنواری' ذائقہ ملتا ہے۔",
@@ -95,7 +95,7 @@ export const allMenuItems: MenuItem[] = [
     descriptionUr: "آگ پر گرل کیے ہوئے چکن سیخ کباب، نرم اور جڑی بوٹیوں سے بھرپور۔",
     price: "Rs. 850",
     image: "/images/home/menu/seekh_kebab.png",
-    bgClass: "bg-gradient-to-br from-orange-50 to-red-50",
+    bgClass: "bg-gradient-to-br from-red-50 to-red-50",
     details: {
       recipe: "Finely minced chicken mixed with green chilies, coriander, and our house-made kebab masala. Skewered and grilled over open flames until golden brown and succulent.",
       recipeUr: "باریک چکن قیمہ جسے ہری مرچوں، دھنیا اور ہمارے گھر کے بنے کباب مصالحے کے ساتھ ملایا جاتا ہے۔ پھر سیخوں پر لگا کر آگ پر سنہرا ہونے تک پکایا جاتا ہے۔",
@@ -216,7 +216,7 @@ export const allMenuItems: MenuItem[] = [
     descriptionUr: "نوابی چکن بریانی، تازہ رائتہ، سلاد اور 1.5 لیٹر بوتل کے ساتھ۔",
     price: "Rs 1,499",
     image: "/images/home/desi/biryani_transparent.png",
-    bgAccent: "bg-orange-50/50",
+    bgAccent: "bg-red-50/50",
     details: {
       recipe: "A complete royal experience featuring our signature Dum Biryani with all the essential accompaniments for a perfect meal.",
       recipeUr: "ایک مکمل شاہی تجربہ جس میں ہماری خاص دم بریانی تمام ضروری لوازمات کے ساتھ شامل ہے۔",

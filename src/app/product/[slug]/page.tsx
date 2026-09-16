@@ -39,7 +39,7 @@ export default function ProductDetailPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#FFFFFF] pb-14 pt-24 sm:pt-28 lg:pb-16 lg:pt-32">
+    <main className="min-h-screen bg-[#FFFFFF] pb-14 pt-28 sm:pt-32 lg:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Button */}
@@ -58,7 +58,7 @@ export default function ProductDetailPage() {
           {/* Left Side: Cinematic Image Area */}
           <div className="lg:w-1/2">
             <div className="sticky top-40">
-              <div className="no-cut-image relative aspect-square rounded-[2rem] lg:rounded-[3rem] overflow-hidden bg-gradient-to-br from-orange-50 to-brand-white border border-gray-100 shadow-2xl group">
+              <div className="no-cut-image relative aspect-square rounded-[2rem] lg:rounded-[3rem] overflow-hidden bg-gradient-to-br from-red-50 to-brand-white border border-gray-100 shadow-2xl group">
                 <Image 
                   src={item.image} 
                   alt={item.name} 
@@ -151,13 +151,13 @@ export default function ProductDetailPage() {
             <div className="mt-auto pt-7 flex flex-col sm:flex-row gap-3">
               <button 
                 onClick={handleAddToCart}
-                className="flex-1 py-4 bg-brand-primary text-white rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-sm shadow-[0_14px_30px_rgba(248,114,5,0.24)] hover:bg-brand-primary/90 transition-all active:scale-95"
+                className="flex-1 py-4 bg-brand-primary text-white rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-sm shadow-[0_14px_30px_rgba(231, 28, 7,0.24)] hover:bg-brand-primary/90 transition-all active:scale-95"
               >
                 {t("addToCart")}
               </button>
               <button 
                 onClick={handleBuyNow}
-                className="flex-1 py-4 bg-brand-primary text-white rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-sm shadow-2xl hover:bg-[#F87205] transition-all active:scale-95"
+                className="flex-1 py-4 bg-brand-primary text-white rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-sm shadow-2xl hover:bg-[#E71C07] transition-all active:scale-95"
               >
                 Buy Now
               </button>

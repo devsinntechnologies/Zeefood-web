@@ -84,7 +84,7 @@ export default function MenuItemSheet({
                 <p className="mb-2 text-[10px] font-black uppercase tracking-[0.22em] text-brand-dark/50">
                   Quantity
                 </p>
-                <div className="flex h-11 w-fit items-center gap-1 rounded-full border border-brand-primary/25 bg-[#fbf7f2] px-2 shadow-sm">
+                <div className="flex h-11 w-fit items-center gap-1 rounded-full border border-brand-primary/25 bg-[#F2F3F3] px-2 shadow-sm">
                   <button
                     type="button"
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
@@ -117,14 +117,14 @@ export default function MenuItemSheet({
                   onChange={(e) => setNote(e.target.value)}
                   placeholder="e.g. Less spicy please"
                   rows={2}
-                  className="w-full resize-none rounded-[14px] border border-gray-200 bg-[#fbf7f2] px-3.5 py-2.5 text-xs font-medium text-brand-dark placeholder:text-brand-dark/35 outline-none transition-all focus:border-brand-primary/40 focus:ring-2 focus:ring-brand-primary/10"
+                  className="w-full resize-none rounded-[14px] border border-gray-200 bg-[#F2F3F3] px-3.5 py-2.5 text-xs font-medium text-brand-dark placeholder:text-brand-dark/35 outline-none transition-all focus:border-brand-primary/40 focus:ring-2 focus:ring-brand-primary/10"
                 />
               </div>
 
               <button
                 type="button"
                 onClick={handleAdd}
-                className="mt-5 flex w-full items-center justify-between rounded-full bg-brand-primary px-6 py-3.5 text-white shadow-[0_10px_24px_rgba(248,114,5,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[#e96500]"
+                className="mt-5 flex w-full items-center justify-between rounded-full bg-brand-primary px-6 py-3.5 text-white shadow-[0_10px_24px_rgba(231, 28, 7,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[#C81705]"
               >
                 <span className="text-[11px] font-black uppercase tracking-[0.2em]">
                   Add to Order
