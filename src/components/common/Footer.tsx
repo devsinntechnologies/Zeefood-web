@@ -150,7 +150,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2 flex flex-col gap-4">
             <Link href="/" className="inline-flex w-fit max-w-full items-center no-underline" aria-label="ZeeFood Gallery home">
-              <span className="relative block h-28 w-52 shrink-0 sm:h-32 sm:w-60">
+              <span className="relative block h-[6.79rem] w-[12.61rem] shrink-0 sm:h-[7.76rem] sm:w-[14.55rem]">
                 <Image
                   src="/logo2.png"
                   alt="ZeeFood Gallery"

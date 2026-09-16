@@ -279,7 +279,7 @@ export default function AboutSection() {
             loading="eager"
             className="object-contain"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-overlay via-transparent to-transparent opacity-80" />
           <div className="absolute bottom-12 left-6 lg:left-12 lg:bottom-20 max-w-2xl">
              <h4 className="text-3xl lg:text-5xl font-black text-white uppercase italic tracking-tighter mb-4">
                {t("brandName")}

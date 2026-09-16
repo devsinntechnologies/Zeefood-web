@@ -484,7 +484,7 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
 function BrandMark({ mobile = false }: { mobile?: boolean }) {
   return (
     <Link href="/" className="my-auto flex items-center transition-opacity duration-300 hover:opacity-90" aria-label="ZeeFood Gallery home">
-      <div className="relative h-28 w-52 shrink-0 sm:h-32 sm:w-60">
+      <div className="relative h-[6.79rem] w-[12.61rem] shrink-0 sm:h-[7.76rem] sm:w-[14.55rem]">
         <Image
           src="/logo2.png"
           alt="ZeeFood Gallery"

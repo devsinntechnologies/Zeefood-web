@@ -33,7 +33,7 @@ export default function ForgotPasswordPage() {
             <Image src="/logo2.png" alt="ZeeFood Gallery" fill className="object-contain object-left drop-shadow-md transition-transform group-hover:scale-105" priority unoptimized />
           </div>
         </Link>
-        <Link href="/login" className="flex items-center gap-1.5 text-sm font-semibold text-[#111111] hover:text-[#E71C07] transition-colors">
+        <Link href="/login" className="flex items-center gap-1.5 text-sm font-semibold text-brand-dark hover:text-[#E71C07] transition-colors">
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -63,10 +63,10 @@ export default function ForgotPasswordPage() {
                   <div className="w-12 h-12 rounded-full bg-[#F2F3F3] border border-[#F2F3F3] flex items-center justify-center mx-auto mb-3 text-xl">
                     🔐
                   </div>
-                  <h1 className="text-[1.6rem] font-black tracking-tight text-[#111111] leading-none mb-2">
+                  <h1 className="text-[1.6rem] font-black tracking-tight text-brand-dark leading-none mb-2">
                     Forgot Password<span className="text-[#E71C07]">?</span>
                   </h1>
-                  <p className="text-[0.85rem] text-[#111111] font-medium leading-snug px-2">
+                  <p className="text-[0.85rem] text-brand-dark font-medium leading-snug px-2">
                     No worries! Enter your phone number or email and we&apos;ll send you recovery instructions.
                   </p>
                 </div>
@@ -74,7 +74,7 @@ export default function ForgotPasswordPage() {
                 {/* Form */}
                 <form onSubmit={handleReset} className="flex flex-col gap-4 mt-2">
                   <div className="flex flex-col gap-1">
-                    <label htmlFor={inputId} className="text-[0.65rem] font-bold text-[#111111] uppercase tracking-widest pl-1">
+                    <label htmlFor={inputId} className="text-[0.65rem] font-bold text-brand-dark uppercase tracking-widest pl-1">
                       Phone or Email
                     </label>
                     <div className={`relative flex items-center bg-white/70 border-2 rounded-xl overflow-hidden transition-all duration-300 shadow-sm ${state.inputFocus ? "border-[#E71C07] shadow-[0_0_0_4px_rgba(231, 28, 7,0.1)]" : "border-[#E5E7EB] hover:border-[#E71C07]"}`}>
@@ -91,7 +91,7 @@ export default function ForgotPasswordPage() {
                         onChange={(e) => setState((s) => ({ ...s, identifier: e.target.value }))}
                         onFocus={() => setState((s) => ({ ...s, inputFocus: true }))}
                         onBlur={() => setState((s) => ({ ...s, inputFocus: false }))}
-                        className="flex-1 px-3 py-2.5 bg-transparent text-[#111111] placeholder:text-[#111111] font-semibold text-sm outline-none"
+                        className="flex-1 px-3 py-2.5 bg-transparent text-brand-dark placeholder:text-brand-dark font-semibold text-sm outline-none"
                         required
                       />
                     </div>
@@ -116,11 +116,11 @@ export default function ForgotPasswordPage() {
                 <div className="w-16 h-16 rounded-full bg-[#ecfdf3] border border-[#a6f4c5] flex items-center justify-center mx-auto mb-4 text-2xl">
                   ✨
                 </div>
-                <h2 className="text-[1.5rem] font-black tracking-tight text-[#111111] mb-2">Check Your Device</h2>
-                <p className="text-[0.85rem] text-[#111111] font-medium leading-relaxed px-4 mb-6">
+                <h2 className="text-[1.5rem] font-black tracking-tight text-brand-dark mb-2">Check Your Device</h2>
+                <p className="text-[0.85rem] text-brand-dark font-medium leading-relaxed px-4 mb-6">
                   We&apos;ve sent recovery instructions to <br/><span className="font-bold text-[#E71C07]">{state.identifier}</span>
                 </p>
-                <Link href="/login" className="font-bold text-[#111111] hover:text-[#E71C07] transition-colors underline underline-offset-4">
+                <Link href="/login" className="font-bold text-brand-dark hover:text-[#E71C07] transition-colors underline underline-offset-4">
                   Return to Login
                 </Link>
               </div>

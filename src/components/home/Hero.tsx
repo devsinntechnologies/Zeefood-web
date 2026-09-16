@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
+const WHATSAPP_ORDER_URL =
+  "https://wa.me/923354153368?text=Assalam-o-Alaikum%21%20I%20would%20like%20to%20place%20an%20order%20from%20Zee%20Food%20Gallery.";
 // circular bar
 const heroItems = [
   {
@@ -107,10 +110,10 @@ export default function Hero() {
   const item = heroItems[currentIndex];
 
   return (
-    <section className="relative flex min-h-[85svh] items-center overflow-hidden bg-[#FFFFFF] pb-2 pt-28 sm:pb-2 sm:pt-32 lg:pb-2">
-      <div className="site-container flex min-h-0 flex-col items-center">
-        <div className="flex w-full flex-1 flex-col items-center gap-1 lg:flex-row lg:gap-3 2xl:gap-5 [@media(min-width:2200px)]:gap-6">
-          <div className="relative z-10 max-w-3xl space-y-1 text-center sm:space-y-2 lg:w-1/2 lg:text-left 2xl:max-w-4xl">
+    <section className="relative flex min-h-[85svh] items-start overflow-hidden bg-[#FFFFFF] pb-4 pt-24 sm:pb-4 sm:pt-28 lg:pb-6">
+      <div className="site-container flex min-h-0 w-full flex-col items-center">
+        <div className="flex w-full flex-1 flex-col items-center gap-1 lg:flex-row lg:items-center lg:gap-3 2xl:gap-5 [@media(min-width:2200px)]:gap-6">
+          <div className="relative z-10 -mt-2 max-w-3xl space-y-1 text-center sm:-mt-3 sm:space-y-2 lg:w-1/2 lg:text-left 2xl:max-w-4xl">
             <div className="inline-flex flex-col items-center lg:items-start">
               <p lang="ur" dir="rtl" className="font-ama-dhaba text-[clamp(34px,9vw,52px)] font-black leading-none text-brand-primary lg:text-[clamp(54px,4vw,70px)] [@media(min-width:2200px)]:text-[80px]">
                 اماں جی کا ڈھابہ
@@ -126,8 +129,24 @@ export default function Hero() {
                 {item.description}
               </p>
             </div>
-          </div>
 
+            <div className="mt-4 flex flex-col items-center gap-3 sm:mt-5 sm:flex-row sm:justify-center lg:justify-start">
+              <Link
+                href="/menu"
+                className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-brand-primary px-6 text-sm font-bold uppercase tracking-wider text-white shadow-[0_10px_22px_rgba(231,28,7,0.22)] transition-all duration-200 hover:bg-brand-primary-hover sm:w-auto sm:min-w-[11rem]"
+              >
+                Explore Menu
+              </Link>
+              <a
+                href={WHATSAPP_ORDER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border-2 border-brand-primary bg-white px-6 text-sm font-bold uppercase tracking-wider text-brand-primary transition-all duration-200 hover:bg-brand-primary/5 sm:w-auto sm:min-w-[11rem]"
+              >
+                Order on WhatsApp
+              </a>
+            </div>
+          </div>
           <div className="relative z-10 flex w-full justify-center lg:w-1/2 lg:justify-end">
             <CircularHeroDisplay currentIndex={currentIndex} rotation={rotation} />
           </div>

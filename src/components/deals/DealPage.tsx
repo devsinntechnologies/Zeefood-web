@@ -69,12 +69,12 @@ export default function DealPage({ products }: { products: Product[] }) {
                     <div className="max-w-2xl">
                         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-primary">Exclusive Deals</p>
                         <h1 className="text-3xl font-black leading-tight sm:text-4xl">Special prices from our kitchen.</h1>
-                        <p className="mt-3 max-w-xl text-base leading-7 text-gray-600">
+                        <p className="mt-3 max-w-xl text-base leading-7 text-brand-dark/70">
                             Enjoy selected favorites at a little less, freshly prepared when you order.
                         </p>
                     </div>
                     <div className="w-fit rounded-[18px] border border-brand-primary/20 bg-white px-5 py-3 shadow-sm">
-                        <p className="text-sm font-semibold text-gray-600">Limited offers</p>
+                        <p className="text-sm font-semibold text-brand-dark/70">Limited offers</p>
                         <p className="text-lg font-black text-brand-primary">Up to 22% off</p>
                     </div>
                 </div>
@@ -112,15 +112,15 @@ export default function DealPage({ products }: { products: Product[] }) {
                                 <div className="flex flex-1 flex-col p-5">
                                     <p className="text-sm font-semibold text-brand-primary">{deal.product.category?.CategoryName || "Featured"}</p>
                                     <h2 className="mt-1 text-xl font-black text-brand-dark">{deal.title}</h2>
-                                    <p className="mt-2 text-sm leading-6 text-gray-600">{deal.description}</p>
+                                    <p className="mt-2 text-sm leading-6 text-brand-dark/70">{deal.description}</p>
 
                                     <div className="mt-5 border-y border-gray-100 py-3">
-                                        <p className="text-sm font-semibold text-gray-500">Includes</p>
+                                        <p className="text-sm font-semibold text-brand-dark/60">Includes</p>
                                         <p className="mt-1 font-semibold text-brand-dark">{deal.product.name}</p>
                                     </div>
 
                                     <div className="mt-5">
-                                        <p className="text-sm font-semibold text-gray-500">Deal price</p>
+                                        <p className="text-sm font-semibold text-brand-dark/60">Deal price</p>
                                         <div className="mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
                                             <span className="text-2xl font-black text-brand-primary">{formatPrice(deal.salePrice)}</span>
                                             <span className="text-sm font-medium text-gray-400 line-through">{formatPrice(deal.originalPrice)}</span>

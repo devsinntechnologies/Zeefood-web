@@ -40,7 +40,7 @@ export default function RegisterPage() {
             <Image src="/logo2.png" alt="ZeeFood Gallery" fill className="object-contain object-left drop-shadow-md transition-transform group-hover:scale-105" priority unoptimized />
           </div>
         </Link>
-        <Link href="/login" className="flex items-center gap-1.5 text-sm font-semibold text-[#111111] hover:text-[#E71C07] transition-colors">
+        <Link href="/login" className="flex items-center gap-1.5 text-sm font-semibold text-brand-dark hover:text-[#E71C07] transition-colors">
           Already have an account? Sign in
         </Link>
       </nav>
@@ -61,10 +61,10 @@ export default function RegisterPage() {
           <div className="w-full flex flex-col gap-3">
             {/* Heading */}
             <div className="flex flex-col text-center mb-1">
-              <h1 className="text-[1.8rem] font-black tracking-tight text-[#111111] leading-none mb-1">
+              <h1 className="text-[1.8rem] font-black tracking-tight text-brand-dark leading-none mb-1">
                 Join ZeeFood<span className="text-[#E71C07]">.</span>
               </h1>
-              <p className="text-[0.85rem] text-[#111111] font-medium leading-snug">
+              <p className="text-[0.85rem] text-brand-dark font-medium leading-snug">
                 Create a free account to unlock your <span className="text-[#E71C07] font-semibold">premium</span> dining experience.
               </p>
             </div>
@@ -74,7 +74,7 @@ export default function RegisterPage() {
               
               {/* Full Name */}
               <div className="flex flex-col gap-0.5">
-                <label htmlFor={nameInputId} className="text-[0.65rem] font-bold text-[#111111] uppercase tracking-widest pl-1">
+                <label htmlFor={nameInputId} className="text-[0.65rem] font-bold text-brand-dark uppercase tracking-widest pl-1">
                   Full Name
                 </label>
                 <div className={`relative flex items-center bg-white/70 border-2 rounded-xl overflow-hidden transition-all duration-300 shadow-sm ${state.nameFocus ? "border-[#E71C07] shadow-[0_0_0_4px_rgba(231, 28, 7,0.1)]" : "border-[#E5E7EB] hover:border-[#E71C07]"}`}>
@@ -91,7 +91,7 @@ export default function RegisterPage() {
                     onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
                     onFocus={() => setState((s) => ({ ...s, nameFocus: true }))}
                     onBlur={() => setState((s) => ({ ...s, nameFocus: false }))}
-                    className="flex-1 px-3 py-2 bg-transparent text-[#111111] placeholder:text-[#111111] font-semibold text-sm outline-none"
+                    className="flex-1 px-3 py-2 bg-transparent text-brand-dark placeholder:text-brand-dark font-semibold text-sm outline-none"
                     required
                   />
                 </div>
@@ -99,7 +99,7 @@ export default function RegisterPage() {
 
               {/* Phone input */}
               <div className="flex flex-col gap-0.5">
-                <label htmlFor={phoneInputId} className="text-[0.65rem] font-bold text-[#111111] uppercase tracking-widest pl-1">
+                <label htmlFor={phoneInputId} className="text-[0.65rem] font-bold text-brand-dark uppercase tracking-widest pl-1">
                   Phone Number
                 </label>
                 <div className={`relative flex items-center bg-white/70 border-2 rounded-xl overflow-hidden transition-all duration-300 shadow-sm ${state.phoneFocus ? "border-[#E71C07] shadow-[0_0_0_4px_rgba(231, 28, 7,0.1)]" : "border-[#E5E7EB] hover:border-[#E71C07]"}`}>
@@ -117,7 +117,7 @@ export default function RegisterPage() {
                     onChange={(e) => setState((s) => ({ ...s, phone: e.target.value.replace(/\D/g, "") }))}
                     onFocus={() => setState((s) => ({ ...s, phoneFocus: true }))}
                     onBlur={() => setState((s) => ({ ...s, phoneFocus: false }))}
-                    className="flex-1 px-3 py-2 bg-transparent text-[#111111] placeholder:text-[#111111] font-semibold text-sm outline-none"
+                    className="flex-1 px-3 py-2 bg-transparent text-brand-dark placeholder:text-brand-dark font-semibold text-sm outline-none"
                     required
                   />
                 </div>
@@ -125,7 +125,7 @@ export default function RegisterPage() {
 
               {/* Email field */}
               <div className="flex flex-col gap-0.5">
-                <label htmlFor={emailInputId} className="text-[0.65rem] font-bold text-[#111111] uppercase tracking-widest pl-1">
+                <label htmlFor={emailInputId} className="text-[0.65rem] font-bold text-brand-dark uppercase tracking-widest pl-1">
                   Email Address
                 </label>
                 <div className={`relative flex items-center bg-white/70 border-2 rounded-xl overflow-hidden transition-all duration-300 shadow-sm ${state.emailFocus ? "border-[#E71C07] shadow-[0_0_0_4px_rgba(231, 28, 7,0.1)]" : "border-[#E5E7EB] hover:border-[#E71C07]"}`}>
@@ -142,7 +142,7 @@ export default function RegisterPage() {
                     onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
                     onFocus={() => setState((s) => ({ ...s, emailFocus: true }))}
                     onBlur={() => setState((s) => ({ ...s, emailFocus: false }))}
-                    className="flex-1 px-3 py-2 bg-transparent text-[#111111] placeholder:text-[#111111] font-semibold text-sm outline-none"
+                    className="flex-1 px-3 py-2 bg-transparent text-brand-dark placeholder:text-brand-dark font-semibold text-sm outline-none"
                     required
                   />
                 </div>
@@ -160,7 +160,7 @@ export default function RegisterPage() {
                     )}
                   </div>
                 </div>
-                <span className="text-[0.7rem] text-[#111111] leading-snug group-hover:text-[#111111] transition-colors">
+                <span className="text-[0.7rem] text-brand-dark leading-snug group-hover:text-brand-dark transition-colors">
                   I agree to ZeeFood&apos;s <Link href="/terms" className="text-[#E71C07] font-bold hover:underline">Terms of Service</Link> and <Link href="/privacy" className="text-[#E71C07] font-bold hover:underline">Privacy Policy</Link>.
                 </span>
               </label>
@@ -183,7 +183,7 @@ export default function RegisterPage() {
 
             <div className="flex items-center gap-2 my-2">
               <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#d8c8be] to-transparent" />
-              <span className="text-[0.6rem] font-bold text-[#111111] uppercase tracking-widest px-1">
+              <span className="text-[0.6rem] font-bold text-brand-dark uppercase tracking-widest px-1">
                 or sign up with
               </span>
               <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#d8c8be] to-transparent" />
@@ -205,7 +205,7 @@ function SocialButton({ id, icon, label }: { id: string; icon: React.ReactNode; 
     <button
       id={id}
       type="button"
-      className="group flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white/80 border-2 border-[#E5E7EB] hover:border-[#E71C07] hover:bg-white text-[#111111] font-bold text-[0.8rem] transition-all duration-250 hover:shadow-[0_4px_18px_rgba(231, 28, 7,0.12)] hover:-translate-y-0.5 shadow-sm backdrop-blur-sm"
+      className="group flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white/80 border-2 border-[#E5E7EB] hover:border-[#E71C07] hover:bg-white text-brand-dark font-bold text-[0.8rem] transition-all duration-250 hover:shadow-[0_4px_18px_rgba(231, 28, 7,0.12)] hover:-translate-y-0.5 shadow-sm backdrop-blur-sm"
     >
       {icon}
       <span>{label}</span>
@@ -223,7 +223,7 @@ const GoogleIcon = () => (
 );
 
 const AppleIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-4 h-4" fill="#111111" aria-hidden="true">
+  <svg viewBox="0 0 24 24" className="w-4 h-4 text-brand-dark" fill="currentColor" aria-hidden="true">
     <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.4.07 2.38.76 3.18.8 1.21-.24 2.37-.97 3.67-.84 1.62.19 2.84.91 3.63 2.3-3.21 1.98-2.46 5.85.48 7.13-.57 1.52-1.32 3.02-3 3.49zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
   </svg>
 );

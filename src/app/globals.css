@@ -16,7 +16,8 @@
   --color-brand-pan: #4C5861;
   --color-brand-secondary: #111111;
   --color-brand-accent: #E71C07;
-  --color-brand-dark: #111111;
+  --color-brand-dark: #4C5861;
+  --color-brand-overlay: #111111;
   --color-brand-body: #4C5861;
   --color-brand-surface: #F2F3F3;
   --color-brand-light: #FFFFFF;
@@ -74,7 +75,7 @@ select {
 :root {
   /* ZeeFood Gallery brand palette */
   --color-bg: #FFFFFF;
-  --color-text: #111111;
+  --color-text: #4C5861;
   --color-body: #4C5861;
   --color-accent: #E71C07;
   --color-accent-hover: #C81705;

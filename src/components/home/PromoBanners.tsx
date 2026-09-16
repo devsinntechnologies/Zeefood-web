@@ -12,10 +12,10 @@ const promoCards = [
     cta: "Order Now",
     href: "/order",
     image: "/images/home/promo/promo_delivery.jpg",
-    overlayFrom: "from-brand-dark/90",
+    overlayFrom: "from-brand-overlay/90",
     overlayTo: "to-transparent",
     overlayDir: "bg-gradient-to-r",
-    accentColor: "text-brand-secondary",
+    accentColor: "text-brand-dark",
     badgeColor: "bg-brand-primary text-white",
     size: "large", // spans 2 cols
   },
@@ -28,10 +28,10 @@ const promoCards = [
     cta: "View Menu",
     href: "/product/nawabi-chicken-biryani",
     image: "/images/home/promo/promo_biryani.jpg",
-    overlayFrom: "from-brand-dark/85",
+    overlayFrom: "from-brand-overlay/85",
     overlayTo: "to-transparent",
     overlayDir: "bg-gradient-to-t",
-    accentColor: "text-brand-secondary",
+    accentColor: "text-brand-dark",
     badgeColor: "bg-brand-secondary text-white",
     size: "small",
   },
@@ -44,7 +44,7 @@ const promoCards = [
     cta: "Explore",
     href: "/product/special-mutton-karahi",
     image: "/images/home/promo/promo_karahi.jpg",
-    overlayFrom: "from-brand-dark/85",
+    overlayFrom: "from-brand-overlay/85",
     overlayTo: "to-transparent",
     overlayDir: "bg-gradient-to-t",
     accentColor: "text-[#FEE962]",
@@ -123,14 +123,14 @@ export default function PromoBanners() {
               <span className="text-white/80 text-[10px] sm:text-xs font-black tracking-widest uppercase block mb-4">Craving Something?</span>
               <h3 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight leading-none drop-shadow-lg">
                 YOUR TABLE<br />
-                <span className="text-brand-secondary italic drop-shadow-lg">AWAITS</span>
+                <span className="text-brand-dark italic drop-shadow-lg">AWAITS</span>
               </h3>
             </div>
 
             <div className="relative z-10 flex flex-col items-stretch gap-4 mt-8 sm:flex-row sm:items-center sm:gap-6">
               <Link
                 href="/menu"
-                className="inline-flex justify-center px-6 sm:px-8 py-4 bg-white text-brand-primary font-black uppercase tracking-widest text-xs sm:text-sm rounded-full hover:bg-brand-dark hover:text-white transition-all duration-300 shadow-xl hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] hover:-translate-y-1"
+                className="inline-flex justify-center px-6 sm:px-8 py-4 bg-white text-brand-primary font-black uppercase tracking-widest text-xs sm:text-sm rounded-full hover:bg-brand-overlay hover:text-white transition-all duration-300 shadow-xl hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] hover:-translate-y-1"
               >
                 View Full Menu
               </Link>

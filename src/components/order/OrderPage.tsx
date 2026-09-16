@@ -378,7 +378,7 @@ function ProductQuickAddModal({
                             Rs. {(variant.price || 0).toLocaleString()}
                           </span>
                           {qty > 0 && (
-                            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-dark text-[10px] font-black text-white">
+                            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-overlay text-[10px] font-black text-white">
                               {qty}
                             </span>
                           )}
@@ -639,7 +639,7 @@ export function VariantProductCard({
         }}
         aria-label={cleanName}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/70 via-brand-dark/10 to-transparent transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-overlay/70 via-brand-overlay/10 to-transparent transition-opacity duration-300" />
 
         <div className="absolute inset-x-2 bottom-2 z-10 rounded-[14px] border border-white/20 bg-white/95 p-3 shadow-lg backdrop-blur-md sm:inset-x-2.5 sm:bottom-2.5" onClick={e => e.stopPropagation()}>
           <h3
@@ -823,10 +823,10 @@ export default function OrderPage() {
         {/* ── Main Menu Panel ── */}
         <div className="flex-1 bg-[#F2F3F3]">
           <div className="mb-5 rounded-[20px] border border-brand-primary/10 bg-white/35 p-4 sm:p-6 shadow-[0_8px_24px_rgba(17,24,39,0.03)] backdrop-blur-sm sm:mb-6">
-            <h1 className={`mb-1 text-2xl sm:text-3xl font-black tracking-tight text-[#111111] lg:text-4xl ${language === "UR" ? "text-right font-ama-dhaba" : ""}`}>
+            <h1 className={`mb-1 text-2xl sm:text-3xl font-black tracking-tight text-brand-dark lg:text-4xl ${language === "UR" ? "text-right font-ama-dhaba" : ""}`}>
               {isSelfOrder ? `Table ${table?.tableNumber}` : t("orderDelivery")}
             </h1>
-            <p className={`mb-5 text-xs sm:text-sm font-semibold text-[#111111]/70 lg:text-base ${language === "UR" ? "text-right" : ""}`}>
+            <p className={`mb-5 text-xs sm:text-sm font-semibold text-brand-dark/70 lg:text-base ${language === "UR" ? "text-right" : ""}`}>
               {isSelfOrder
                 ? "Browse the menu and send your order to the waiter. It is confirmed after approval."
                 : t("exclusiveChefMeals")}

@@ -89,7 +89,7 @@ export default function LocationModal() {
   const actionButtonClass = "mx-auto inline-flex min-h-12 w-full max-w-[330px] items-center justify-center gap-2.5 rounded-full border border-brand-primary/15 bg-white/95 px-5 py-3 text-sm font-black text-brand-dark shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-primary/35 hover:bg-brand-primary/10";
 
   return (
-    <div className="fixed inset-0 z-[1000] flex items-center justify-center overflow-hidden bg-brand-dark/70 p-4 backdrop-blur-[8px] animate-in fade-in duration-300 ease-in-out">
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center overflow-hidden bg-brand-overlay/70 p-4 backdrop-blur-[8px] animate-in fade-in duration-300 ease-in-out">
       <div className="relative w-full max-w-[440px] overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-br from-white via-white to-brand-surface px-5 py-5 shadow-[0_30px_100px_rgba(0,0,0,0.20),0_8px_28px_rgba(231, 28, 7,0.10)] animate-in zoom-in-95 duration-300 ease-in-out sm:px-7">
         <div className="absolute inset-0 bg-[linear-gradient(125deg,rgba(231, 28, 7,0.12),rgba(255,255,255,0.72)_44%,rgba(231, 28, 7,0.08)),radial-gradient(circle_at_80%_35%,rgba(231, 28, 7,0.16),transparent_34%),radial-gradient(circle_at_10%_18%,rgba(17,24,39,0.06),transparent_28%)]" />
 
@@ -132,9 +132,9 @@ export default function LocationModal() {
                     <button
                       type="button"
                       onClick={handleFetchLocation}
-                      className={`${actionButtonClass} border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300 hover:bg-gray-100`}
+                      className={`${actionButtonClass} border-gray-200 bg-gray-50 text-brand-dark hover:border-gray-300 hover:bg-gray-100`}
                     >
-                      <LocateFixed className="h-4 w-4 text-gray-600 transition-transform group-hover:scale-110" />
+                      <LocateFixed className="h-4 w-4 text-brand-dark/70 transition-transform group-hover:scale-110" />
                       Use Current Location
                     </button>
                   )}
