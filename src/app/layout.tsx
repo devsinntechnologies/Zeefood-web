@@ -22,6 +22,10 @@ const poppins = localFont({
 export const metadata: Metadata = {
   title: "ZeeFood Premium",
   description: "Premium food delivery experience.",
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    apple: [{ url: "/favicon.png", type: "image/png" }],
+  },
 };
 
 export const viewport: Viewport = {
