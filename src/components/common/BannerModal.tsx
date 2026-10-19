@@ -1,20 +1,18 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const BANNERS = [
-  "/zeefood Banner/20260804-120946.jpg",
-  "/zeefood Banner/20260804-121003.jpg",
-  "/zeefood Banner/20260804-121009.jpg",
-  "/zeefood Banner/20260804-121018.jpg",
-  "/zeefood Banner/20260804-121025.jpg",
-  "/zeefood Banner/20260804-121030.jpg",
-  "/zeefood Banner/20260804-121036.jpg",
-  "/zeefood Banner/20260804-121042.jpg",
-  "/zeefood Banner/20260804-121047.jpg",
-  "/zeefood Banner/20260804-121053.jpg",
-  "/zeefood Banner/20260804-121058.jpg",
+  "/zeefood Banner/1.png",
+  "/zeefood Banner/2.png",
+  "/zeefood Banner/3.png",
+  "/zeefood Banner/4.png",
+  "/zeefood Banner/5.png",
+  "/zeefood Banner/6.png",
+  "/zeefood Banner/7.png",
+  "/zeefood Banner/img_v3_0215h_773a2118-fee7-4a2c-a9d7-d45fd5b9ebhu.jpg",
+  "/zeefood Banner/img_v3_0215i_bbe0fdad-b5ad-476e-bdb2-9923e048fahu.jpg",
+  "/zeefood Banner/img_v3_0215i_6e182fed-eefa-4693-b77c-d1a50251abhu.jpg",
 ];
 
 export default function BannerModal({ onClose }: { onClose: () => void }) {
@@ -22,7 +20,8 @@ export default function BannerModal({ onClose }: { onClose: () => void }) {
 
   useEffect(() => {
     const key = "zeefood_banner_index";
-    const current = parseInt(sessionStorage.getItem(key) || "0", 10);
+    const saved = Number(sessionStorage.getItem(key) || "0");
+    const current = Number.isSafeInteger(saved) && saved >= 0 ? saved % BANNERS.length : 0;
     const next = (current + 1) % BANNERS.length;
     sessionStorage.setItem(key, String(next));
     setBannerSrc(BANNERS[current]);
