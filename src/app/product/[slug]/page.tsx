@@ -29,7 +29,7 @@ export default function ProductDetailPage() {
   const handleBuyNow = () => {
     const message = `*BUY NOW - ZEE FOOD GALLERY*\n\n*Item:* ${item.name} (${item.nameUr})\n*Price:* ${item.price}\n\nPlease confirm my order. Thank you!`;
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/923354153368?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/923076743812?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
   };
 

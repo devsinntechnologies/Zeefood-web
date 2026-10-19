@@ -63,7 +63,7 @@ export default function ContactPage() {
                   </svg>
                 }
                 title="Call Us Directly"
-                detail="+92 335 415 3368"
+                detail="+92 307 674 3812"
               />
               <ContactMethod 
                 icon={

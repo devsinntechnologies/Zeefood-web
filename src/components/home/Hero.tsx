@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const WHATSAPP_ORDER_URL =
-  "https://wa.me/923354153368?text=Assalam-o-Alaikum%21%20I%20would%20like%20to%20place%20an%20order%20from%20Zee%20Food%20Gallery.";
+  "https://wa.me/923076743812?text=Assalam-o-Alaikum%21%20I%20would%20like%20to%20place%20an%20order%20from%20Zee%20Food%20Gallery.";
 // circular bar
 const heroItems = [
   {

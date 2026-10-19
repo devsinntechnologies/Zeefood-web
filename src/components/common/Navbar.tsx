@@ -104,7 +104,7 @@ export default function Navbar() {
     msg += "━━━━━━━━━━━━━━━━━━━\n\n";
     msg += "*Please confirm my order. Thank you! 🙏*";
 
-    window.open(`https://wa.me/923354153368?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/923076743812?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
 
     // Automatically clear cart items once order is placed on WhatsApp
     cartItems.forEach((c: any) => {
